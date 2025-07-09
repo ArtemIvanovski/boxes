@@ -1,0 +1,19 @@
+"D:\CLION\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/CLION/CLion 2024.3.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\TruckLoadingSimulator -B D:\TruckLoadingSimulator\cmake-build-debug
+CMake Error at CMakeLists.txt:8 (find_package):
+  By not providing "Findglfw3.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "glfw3", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "glfw3" with any of
+  the following names:
+
+    glfw3Config.cmake
+    glfw3-config.cmake
+
+  Add the installation prefix of "glfw3" to CMAKE_PREFIX_PATH or set
+  "glfw3_DIR" to a directory containing one of the above files.  If "glfw3"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+-- Configuring incomplete, errors occurred!
