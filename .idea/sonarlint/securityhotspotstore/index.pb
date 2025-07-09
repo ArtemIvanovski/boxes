@@ -1,8 +1,6 @@
 
 >
 CMakeLists.txt,9\a\9a2aa4db38d3115ed60da621e012c0efc0172aae
-8
-main.cpp,6\8\682a50d19e416195436708e48c7761923b8d6651
 G
 assets/models/lorry.glb,d\c\dc4b553c2db43274990ef53875aef22bd282fe2d
 F
@@ -51,3 +49,7 @@ w
 G.idea/sonarlint/issuestore/d/c/dc4b553c2db43274990ef53875aef22bd282fe2d,1\a\1a22206a785573165820d292683c92b0f28722b0
 A
 src/core/Window.h,5\5\55ab6b0ddcb2d396585b87aba7b998f9fe11a761
+9
+	build.bat,2\8\282119df8cfcad4c8c8421ba30fdcdf8793f5f82
+7
+run.bat,d\6\d62d1a3820f518e5a42bb812ac7ae9cde9b68d75

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-# Установка vcpkg toolchain ПЕРЕД project()
+# ВАЖНО: Установка vcpkg toolchain ПЕРЕД project()
 set(CMAKE_TOOLCHAIN_FILE "C:/Users/Pasha/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
 
 project(TruckLoadingSimulator)
@@ -14,26 +14,20 @@ find_package(glad CONFIG REQUIRED)
 find_package(assimp CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 
-# Создать папки для внешних библиотек
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/external/imgui)
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/external/stb)
-
-# Скачать ImGui если не существует
+# Загрузка ImGui если не существует
 if(NOT EXISTS ${CMAKE_SOURCE_DIR}/external/imgui/imgui.cpp)
     message(STATUS "Downloading Dear ImGui...")
-    file(DOWNLOAD
-            "https://github.com/ocornut/imgui/archive/refs/tags/v1.90.1.zip"
-            "${CMAKE_BINARY_DIR}/imgui.zip"
-            SHOW_PROGRESS
+    include(FetchContent)
+    FetchContent_Declare(
+            imgui
+            GIT_REPOSITORY https://github.com/ocornut/imgui.git
+            GIT_TAG v1.90.1
     )
-    execute_process(
-            COMMAND ${CMAKE_COMMAND} -E tar xzf "${CMAKE_BINARY_DIR}/imgui.zip"
-            WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-    )
-    file(COPY ${CMAKE_BINARY_DIR}/imgui-1.90.1/ DESTINATION ${CMAKE_SOURCE_DIR}/external/imgui/)
+    FetchContent_MakeAvailable(imgui)
+    file(COPY ${imgui_SOURCE_DIR}/ DESTINATION ${CMAKE_SOURCE_DIR}/external/imgui/)
 endif()
 
-# Скачать stb_image.h если не существует
+# Загрузка stb_image.h если не существует
 if(NOT EXISTS ${CMAKE_SOURCE_DIR}/external/stb/stb_image.h)
     message(STATUS "Downloading stb_image.h...")
     file(DOWNLOAD
@@ -46,6 +40,7 @@ endif()
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${CMAKE_SOURCE_DIR}/external/imgui)
+include_directories(${CMAKE_SOURCE_DIR}/external/imgui/backends)
 include_directories(${CMAKE_SOURCE_DIR}/external/stb)
 
 # ImGui sources
@@ -59,14 +54,9 @@ set(IMGUI_SOURCES
         external/imgui/backends/imgui_impl_opengl3.cpp
 )
 
-# Основные исходники проекта
+# Только основные исходники - только main.cpp
 set(PROJECT_SOURCES
         src/main.cpp
-        src/graphics/Camera.cpp
-        src/graphics/Shader.cpp
-        src/graphics/Mesh.cpp
-        src/graphics/Model.cpp
-        src/core/PerformanceManager.cpp
 )
 
 # Создаем исполняемый файл
@@ -83,29 +73,26 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         glm::glm
 )
 
-# Компилятор-специфичные настройки для максимальной производительности
-if(CMAKE_BUILD_TYPE STREQUAL "Release")
-    if(MSVC)
-        target_compile_options(${PROJECT_NAME} PRIVATE
-                /O2 /Ob2 /Oi /Ot /Oy /GL /DNDEBUG /arch:AVX2)
-        target_link_options(${PROJECT_NAME} PRIVATE /LTCG /OPT:REF /OPT:ICF)
-    else()
-        target_compile_options(${PROJECT_NAME} PRIVATE
-                -O3 -march=native -DNDEBUG -ffast-math -flto)
-        target_link_options(${PROJECT_NAME} PRIVATE -flto)
+# Компилятор-специфичные настройки
+if(MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4)
+    if(CMAKE_BUILD_TYPE STREQUAL "Release")
+        target_compile_options(${PROJECT_NAME} PRIVATE /O2 /Ob2 /DNDEBUG)
+    endif()
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
+    if(CMAKE_BUILD_TYPE STREQUAL "Release")
+        target_compile_options(${PROJECT_NAME} PRIVATE -O3 -DNDEBUG)
     endif()
 endif()
 
 # Копируем ресурсы в папку сборки
-file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
-
-# Создаем папки если их нет
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/src/graphics)
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/src/core)
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/assets/shaders)
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/assets/models)
+if(EXISTS ${CMAKE_SOURCE_DIR}/assets)
+    file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
+endif()
 
 message(STATUS "Project configured successfully!")
+message(STATUS "Vcpkg toolchain: ${CMAKE_TOOLCHAIN_FILE}")
 message(STATUS "Libraries found:")
 message(STATUS "  - GLFW: ${glfw3_VERSION}")
 message(STATUS "  - GLAD: Found")
