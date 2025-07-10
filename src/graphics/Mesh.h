@@ -103,7 +103,8 @@ public:
 
         // Draw mesh
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, static_cast<unsigned int>(indices.size()), GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(indices.size()), GL_UNSIGNED_INT, 0);
+
         glBindVertexArray(0);
 
         // Reset to defaults
@@ -137,7 +138,8 @@ public:
         }
 
         glBindVertexArray(VAO);
-        glDrawElementsInstanced(GL_TRIANGLES, static_cast<unsigned int>(indices.size()), GL_UNSIGNED_INT, 0, amount);
+        glDrawElementsInstanced(GL_TRIANGLES, static_cast<GLsizei>(indices.size()), GL_UNSIGNED_INT, 0, amount);
+
         glBindVertexArray(0);
 
         glActiveTexture(GL_TEXTURE0);

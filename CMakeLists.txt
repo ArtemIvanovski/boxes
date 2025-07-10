@@ -5,7 +5,7 @@ set(CMAKE_TOOLCHAIN_FILE "C:/Users/Pasha/vcpkg/scripts/buildsystems/vcpkg.cmake"
 
 project(TruckLoadingSimulator)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Найти пакеты через vcpkg
