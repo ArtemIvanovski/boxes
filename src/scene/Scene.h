@@ -1,8 +1,11 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+#pragma once
+
 #include <memory>
 #include <vector>
+#include <string>
 #include "../graphics/Model.h"
 #include "../graphics/Shader.h"
 
@@ -22,8 +25,8 @@ public:
     void render(const Shader& shader) const;
 
     // Getters
-    const Model* getTruckModel() const { return truckModel.get(); }
-    const Model* getWheelModel() const { return wheelModel.get(); }
+    Model* getTruckModel() const { return truckModel.get(); }
+    Model* getWheelModel() const { return wheelModel.get(); }
 };
 
-#endif // SCENE_H
+#endif //SCENE_H
