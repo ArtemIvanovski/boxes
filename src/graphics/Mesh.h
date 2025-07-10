@@ -24,6 +24,19 @@ struct Vertex {
     glm::vec3 bitangent;
 };
 
+struct Material {
+    glm::vec3 ambient;
+    glm::vec3 diffuse;
+    glm::vec3 specular;
+    float shininess;
+
+    Material() :
+        ambient(0.2f, 0.2f, 0.2f),
+        diffuse(0.8f, 0.8f, 0.8f),
+        specular(1.0f, 1.0f, 1.0f),
+        shininess(32.0f) {}
+};
+
 struct Texture {
     unsigned int id;
     std::string type;
@@ -36,6 +49,7 @@ public:
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
+    Material material;
 
     // Render data
     unsigned int VAO, VBO, EBO;
@@ -43,8 +57,9 @@ public:
     // Performance optimization
     bool optimized = false;
 
-    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures)
-        : vertices(vertices), indices(indices), textures(textures) {
+    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices,
+         std::vector<Texture> textures, Material material = Material())
+        : vertices(vertices), indices(indices), textures(textures), material(material) {
         setupMesh();
     }
 
@@ -57,29 +72,34 @@ public:
 
     // Render the mesh
     void draw(const Shader& shader) const {
+        // Передаем материал в шейдер
+        shader.setVec3("material_ambient", material.ambient);
+        shader.setVec3("material_diffuse", material.diffuse);
+        shader.setVec3("material_specular", material.specular);
+        shader.setFloat("material_shininess", material.shininess);
+
         // Bind appropriate textures
+        bool hasDiffuseTexture = false;
         unsigned int diffuseNr = 1;
         unsigned int specularNr = 1;
-        unsigned int normalNr = 1;
-        unsigned int heightNr = 1;
 
         for (unsigned int i = 0; i < textures.size(); i++) {
             glActiveTexture(GL_TEXTURE0 + i);
 
             std::string number;
             std::string name = textures[i].type;
-            if (name == "texture_diffuse")
+            if (name == "texture_diffuse") {
                 number = std::to_string(diffuseNr++);
+                hasDiffuseTexture = true;
+            }
             else if (name == "texture_specular")
                 number = std::to_string(specularNr++);
-            else if (name == "texture_normal")
-                number = std::to_string(normalNr++);
-            else if (name == "texture_height")
-                number = std::to_string(heightNr++);
 
             shader.setInt((name + number).c_str(), i);
             glBindTexture(GL_TEXTURE_2D, textures[i].id);
         }
+
+        shader.setBool("has_diffuse_texture", hasDiffuseTexture);
 
         // Draw mesh
         glBindVertexArray(VAO);

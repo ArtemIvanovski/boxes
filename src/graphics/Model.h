@@ -5,12 +5,11 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-
-
 #pragma once
 
 #include <string>
 #include <vector>
+#include <fstream>
 #include <memory>
 #include <glm/glm.hpp>
 #include <assimp/Importer.hpp>
@@ -53,7 +52,7 @@ private:
     void processNode(aiNode* node, const aiScene* scene);
     std::unique_ptr<Mesh> processMesh(aiMesh* mesh, const aiScene* scene);
     std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, const std::string& typeName);
-    unsigned int textureFromFile(const char* path, const std::string& directory);
+    unsigned int textureFromFile(const char* path, const std::string& modelDirectory);
     void calculateBoundingBox() const;
 };
 
@@ -122,30 +121,82 @@ void Model::optimizeMeshes() {
 }
 
 void Model::loadModel(const std::string& path) {
+    std::cout << "Attempting to load model: " << path << std::endl;
+
+    // Проверяем существование файлов
+    std::ifstream objFile(path);
+    if (!objFile.good()) {
+        std::cerr << "OBJ file does not exist: " << path << std::endl;
+        throw std::runtime_error("OBJ file not found: " + path);
+    }
+    objFile.close();
+
+    // Проверяем существование .mtl файла
+    std::string mtlPath = path.substr(0, path.find_last_of('.')) + ".mtl";
+    std::ifstream mtlFile(mtlPath);
+    if (mtlFile.good()) {
+        std::cout << "Found corresponding MTL file: " << mtlPath << std::endl;
+        mtlFile.close();
+    } else {
+        std::cout << "Warning: No MTL file found at: " << mtlPath << std::endl;
+    }
+
     Assimp::Importer importer;
 
-    // Optimization flags for better performance
-    unsigned int flags = aiProcess_Triangulate |
-                        aiProcess_FlipUVs |
-                        aiProcess_GenNormals |
-                        aiProcess_OptimizeMeshes |
-                        aiProcess_OptimizeGraph |
-                        aiProcess_JoinIdenticalVertices |
-                        aiProcess_ImproveCacheLocality |
-                        aiProcess_RemoveRedundantMaterials;
+    // Более конкретные флаги для обработки .obj/.mtl файлов
+    unsigned int flags = aiProcess_Triangulate |           // Конвертируем все полигоны в треугольники
+                        aiProcess_FlipUVs |                // Переворачиваем UV координаты
+                        aiProcess_GenNormals |             // Генерируем нормали если их нет
+                        aiProcess_GenSmoothNormals |       // Генерируем сглаженные нормали
+                        aiProcess_OptimizeMeshes |         // Оптимизируем меши
+                        aiProcess_OptimizeGraph |          // Оптимизируем граф сцены
+                        aiProcess_JoinIdenticalVertices |  // Объединяем одинаковые вершины
+                        aiProcess_ImproveCacheLocality |   // Улучшаем cache locality
+                        aiProcess_RemoveRedundantMaterials | // Удаляем дублирующиеся материалы
+                        aiProcess_FixInfacingNormals |     // Исправляем направление нормалей
+                        aiProcess_CalcTangentSpace |       // Вычисляем тангенс пространство
+                        aiProcess_ValidateDataStructure |  // Проверяем структуру данных
+                        aiProcess_SortByPType;             // Сортируем по типу примитива
+
+    std::cout << "Loading with flags: " << std::hex << flags << std::dec << std::endl;
 
     const aiScene* scene = importer.ReadFile(path, flags);
 
     if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
         std::cerr << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
-        return;
+        std::cerr << "Failed to load model at path: " << path << std::endl;
+        throw std::runtime_error("Failed to load model: " + path);
+    }
+
+    std::cout << "Model loaded successfully!" << std::endl;
+    std::cout << "Scene info:" << std::endl;
+    std::cout << "  Meshes: " << scene->mNumMeshes << std::endl;
+    std::cout << "  Materials: " << scene->mNumMaterials << std::endl;
+    std::cout << "  Textures: " << scene->mNumTextures << std::endl;
+    std::cout << "  Animations: " << scene->mNumAnimations << std::endl;
+
+    // Выводим информацию о материалах для отладки
+    for (unsigned int i = 0; i < scene->mNumMaterials; i++) {
+        aiMaterial* mat = scene->mMaterials[i];
+        aiString name;
+        if (mat->Get(AI_MATKEY_NAME, name) == AI_SUCCESS) {
+            std::cout << "  Material " << i << ": " << name.C_Str() << std::endl;
+        }
     }
 
     directory = path.substr(0, path.find_last_of('/'));
+    std::cout << "Model directory: " << directory << std::endl;
+
     processNode(scene->mRootNode, scene);
 
     // Post-loading optimizations
     optimizeMeshes();
+
+    std::cout << "Model processing completed!" << std::endl;
+    std::cout << "Final statistics:" << std::endl;
+    std::cout << "  Total meshes created: " << meshes.size() << std::endl;
+    std::cout << "  Total triangles: " << getTriangleCount() << std::endl;
+    std::cout << "  Total vertices: " << getVertexCount() << std::endl;
 }
 
 void Model::processNode(aiNode* node, const aiScene* scene) {
@@ -165,6 +216,7 @@ std::unique_ptr<Mesh> Model::processMesh(aiMesh* mesh, const aiScene* scene) {
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
+    Material material; // Создаем материал
 
     // Reserve memory for better performance
     vertices.reserve(mesh->mNumVertices);
@@ -205,24 +257,112 @@ std::unique_ptr<Mesh> Model::processMesh(aiMesh* mesh, const aiScene* scene) {
         }
     }
 
-    // Process materials
+    // Process materials - УЛУЧШЕННАЯ ЗАГРУЗКА МАТЕРИАЛОВ
     if (mesh->mMaterialIndex >= 0) {
-        aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+        aiMaterial* mat = scene->mMaterials[mesh->mMaterialIndex];
 
-        std::vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
+        // Получаем имя материала для отладки
+        aiString materialName;
+        if (mat->Get(AI_MATKEY_NAME, materialName) == AI_SUCCESS) {
+            std::cout << "Loading material: " << materialName.C_Str() << std::endl;
+        }
+
+        // Загружаем цвета материала
+        aiColor3D color;
+
+        // Ambient color
+        if (mat->Get(AI_MATKEY_COLOR_AMBIENT, color) == AI_SUCCESS) {
+            material.ambient = glm::vec3(color.r, color.g, color.b);
+            std::cout << "  Ambient: (" << color.r << ", " << color.g << ", " << color.b << ")" << std::endl;
+        } else {
+            // Устанавливаем разумные значения по умолчанию
+            material.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
+        }
+
+        // Diffuse color (основной цвет)
+        if (mat->Get(AI_MATKEY_COLOR_DIFFUSE, color) == AI_SUCCESS) {
+            material.diffuse = glm::vec3(color.r, color.g, color.b);
+            std::cout << "  Diffuse: (" << color.r << ", " << color.g << ", " << color.b << ")" << std::endl;
+
+            // Проверяем, не слишком ли темный материал
+            float brightness = (color.r + color.g + color.b) / 3.0f;
+            if (brightness < 0.05f) {
+                std::cout << "  Warning: Material is very dark, using default gray" << std::endl;
+                material.diffuse = glm::vec3(0.6f, 0.6f, 0.6f);
+            }
+        } else {
+            // Если диффузный цвет не найден, используем светло-серый
+            std::cout << "  No diffuse color found, using default" << std::endl;
+            material.diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
+        }
+
+        // Specular color
+        if (mat->Get(AI_MATKEY_COLOR_SPECULAR, color) == AI_SUCCESS) {
+            material.specular = glm::vec3(color.r, color.g, color.b);
+            std::cout << "  Specular: (" << color.r << ", " << color.g << ", " << color.b << ")" << std::endl;
+        } else {
+            material.specular = glm::vec3(0.5f, 0.5f, 0.5f);
+        }
+
+        // Shininess
+        float shininess;
+        if (mat->Get(AI_MATKEY_SHININESS, shininess) == AI_SUCCESS) {
+            material.shininess = shininess;
+            std::cout << "  Shininess: " << shininess << std::endl;
+        } else {
+            material.shininess = 32.0f;
+        }
+
+        // Дополнительные свойства материала для отладки
+        float opacity;
+        if (mat->Get(AI_MATKEY_OPACITY, opacity) == AI_SUCCESS) {
+            std::cout << "  Opacity: " << opacity << std::endl;
+        }
+
+        // Metallic/Roughness для PBR материалов (если есть)
+        float metallic, roughness;
+        if (mat->Get(AI_MATKEY_METALLIC_FACTOR, metallic) == AI_SUCCESS) {
+            std::cout << "  Metallic: " << metallic << std::endl;
+        }
+        if (mat->Get(AI_MATKEY_ROUGHNESS_FACTOR, roughness) == AI_SUCCESS) {
+            std::cout << "  Roughness: " << roughness << std::endl;
+        }
+
+        // Загружаем текстуры
+        std::vector<Texture> diffuseMaps = loadMaterialTextures(mat, aiTextureType_DIFFUSE, "texture_diffuse");
         textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
 
-        std::vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
+        if (!diffuseMaps.empty()) {
+            std::cout << "  Found " << diffuseMaps.size() << " diffuse texture(s)" << std::endl;
+        }
+
+        std::vector<Texture> specularMaps = loadMaterialTextures(mat, aiTextureType_SPECULAR, "texture_specular");
         textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 
-        std::vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
+        if (!specularMaps.empty()) {
+            std::cout << "  Found " << specularMaps.size() << " specular texture(s)" << std::endl;
+        }
+
+        // Также попробуем загрузить normal maps
+        std::vector<Texture> normalMaps = loadMaterialTextures(mat, aiTextureType_NORMALS, "texture_normal");
         textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
 
-        std::vector<Texture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
-        textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
+        if (!normalMaps.empty()) {
+            std::cout << "  Found " << normalMaps.size() << " normal texture(s)" << std::endl;
+        }
+
+        std::cout << "  Material loaded successfully!" << std::endl;
+    } else {
+        std::cout << "No material found for mesh, using default material" << std::endl;
+        // Устанавливаем значения по умолчанию
+        material.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
+        material.diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
+        material.specular = glm::vec3(0.5f, 0.5f, 0.5f);
+        material.shininess = 32.0f;
     }
 
-    return std::make_unique<Mesh>(vertices, indices, textures);
+    // Создаем mesh с материалом
+    return std::make_unique<Mesh>(vertices, indices, textures, material);
 }
 
 std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType type, const std::string& typeName) {
@@ -255,9 +395,9 @@ std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType 
     return textures;
 }
 
-unsigned int Model::textureFromFile(const char* path, const std::string& directory) {
+unsigned int Model::textureFromFile(const char* path, const std::string& modelDirectory) {
     std::string filename = std::string(path);
-    filename = directory + '/' + filename;
+    filename = modelDirectory + '/' + filename;
 
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -275,11 +415,7 @@ unsigned int Model::textureFromFile(const char* path, const std::string& directo
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
 
-        // Optimization: Use anisotropic filtering if available
-        float maxAnisotropy;
-        glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &maxAnisotropy);
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, maxAnisotropy);
-
+        // Standard texture parameters (removed anisotropic filtering to fix compilation)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
@@ -310,7 +446,5 @@ void Model::calculateBoundingBox() const {
 
     boundingBoxCached = true;
 }
-
-
 
 #endif //MODEL_H

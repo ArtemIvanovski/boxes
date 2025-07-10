@@ -33,12 +33,8 @@ Q.idea/sonarlint/securityhotspotstore/9/a/9a2aa4db38d3115ed60da621e012c0efc0172a
 Q.idea/sonarlint/securityhotspotstore/9/c/9c27d9d25c15368b784f9096d1211870e6101c75,7\1\71888b2c823e41c796bb4e7d87c3c584679cf85b
 w
 G.idea/sonarlint/issuestore/9/c/9c27d9d25c15368b784f9096d1211870e6101c75,e\8\e8ee0b9899ffbf33866f19985b1c286e9645863e
-w
-G.idea/sonarlint/issuestore/6/8/682a50d19e416195436708e48c7761923b8d6651,8\0\808f67f227278a032163e36c409fc597d22a8c18
 H
 src/core/Application.cpp,e\5\e5a0b6d415daffd9ff0cc62fd5786d7ee18918e8
-Å
-Q.idea/sonarlint/securityhotspotstore/6/8/682a50d19e416195436708e48c7761923b8d6651,a\8\a8baf755f39110889ed55ddcd5669dae42acf557
 F
 src/core/Application.h,c\9\c966453c50ec5c79c887e60964f83ae7d9709782
 w
@@ -53,3 +49,11 @@ A
 	build.bat,2\8\282119df8cfcad4c8c8421ba30fdcdf8793f5f82
 7
 run.bat,d\6\d62d1a3820f518e5a42bb812ac7ae9cde9b68d75
+G
+assets/models/lorry.obj,1\e\1e05913db4263d197a4b4c1b29c4e30d96561592
+F
+assets/models/weel.obj,3\5\356454a1300d3097d6787ac4b2e857fd60a0250c
+F
+assets/models/weel.mtl,c\a\ca3967e4d4fb4196f3baa2d2136e12d1aca07443
+G
+assets/models/lorry.mtl,7\2\72912725747f744cff9e73e7c119506e04a952e5

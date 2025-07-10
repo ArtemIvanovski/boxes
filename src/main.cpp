@@ -4,17 +4,19 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include <imgui/imgui.h>
-#include <imgui/backends/imgui_impl_glfw.h>
-#include <imgui/backends/imgui_impl_opengl3.h>
+// Исправленные пути для ImGui - убираем imgui/ из начала
+#include <imgui.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
 
 #include <iostream>
 #include <memory>
-
+#include <GL/gl.h>
 
 #include "graphics/Camera.h"
 #include "graphics/Shader.h"
 #include "graphics/Model.h"
+
 
 // Global variables
 const unsigned int SCR_WIDTH = 1920;
@@ -30,6 +32,26 @@ bool cameraControlEnabled = true;
 // Timing
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
+
+// Material override settings
+struct MaterialOverride {
+    // ИСПРАВЛЕНО: По умолчанию отключаем переопределение, чтобы показывать натуральные цвета
+    bool useTruckOverride = false;  // Изменено с true на false
+    glm::vec3 truckColor = glm::vec3(0.8f, 0.2f, 0.2f); // Красный цвет для грузовика
+    bool useWheelOverride = false;  // Изменено с true на false
+    glm::vec3 wheelColor = glm::vec3(0.1f, 0.1f, 0.1f); // Черный цвет для колес
+
+    // Настройки освещения
+    glm::vec3 ambientStrength = glm::vec3(0.3f, 0.3f, 0.3f); // Увеличенное ambient освещение
+    glm::vec3 lightColor = glm::vec3(1.2f, 1.2f, 1.0f); // Более яркий свет с теплым оттенком
+    glm::vec3 lightPos = glm::vec3(10.0f, 15.0f, 10.0f);
+
+    // Дополнительные настройки для улучшения отображения материалов
+    float materialBrightness = 1.0f;  // Множитель яркости материала
+    bool enhanceContrast = true;      // Улучшение контраста
+};
+
+MaterialOverride materialSettings;
 
 // Performance monitoring
 struct PerformanceMetrics {
@@ -116,15 +138,21 @@ int main() {
     std::unique_ptr<Model> wheelModel;
 
     try {
-        truckModel = std::make_unique<Model>("assets/models/lorry.glb");
-        wheelModel = std::make_unique<Model>("assets/models/weel.glb");
+        std::cout << "Loading truck model..." << std::endl;
+        truckModel = std::make_unique<Model>("assets/models/lorry.obj");
 
-        std::cout << "Truck model loaded successfully!" << std::endl;
-        std::cout << "Triangles: " << truckModel->getTriangleCount() << std::endl;
-        std::cout << "Vertices: " << truckModel->getVertexCount() << std::endl;
+        std::cout << "Loading wheel model..." << std::endl;
+        wheelModel = std::make_unique<Model>("assets/models/weel.obj");
+
+        std::cout << "Models loaded successfully!" << std::endl;
+        std::cout << "Truck - Triangles: " << truckModel->getTriangleCount()
+                  << ", Vertices: " << truckModel->getVertexCount() << std::endl;
+        std::cout << "Wheel - Triangles: " << wheelModel->getTriangleCount()
+                  << ", Vertices: " << wheelModel->getVertexCount() << std::endl;
 
     } catch (const std::exception& e) {
         std::cerr << "Error loading models: " << e.what() << std::endl;
+        std::cerr << "Make sure .obj and .mtl files are in the assets/models/ directory" << std::endl;
         return -1;
     }
 
@@ -153,10 +181,15 @@ int main() {
         modelShader.setMat4("projection", projection);
         modelShader.setMat4("view", view);
 
-        // Lighting setup
-        modelShader.setVec3("lightPos", glm::vec3(10.0f, 10.0f, 10.0f));
-        modelShader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+        // Enhanced lighting setup
+        modelShader.setVec3("lightPos", materialSettings.lightPos);
+        modelShader.setVec3("lightColor", materialSettings.lightColor);
         modelShader.setVec3("viewPos", camera->position);
+        modelShader.setVec3("ambientStrength", materialSettings.ambientStrength);
+
+        // Добавляем настройки для улучшения отображения материалов
+        modelShader.setFloat("materialBrightness", materialSettings.materialBrightness);
+        modelShader.setBool("enhanceContrast", materialSettings.enhanceContrast);
 
         int drawCalls = 0;
         int totalTriangles = 0;
@@ -165,9 +198,16 @@ int main() {
         if (truckModel) {
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, glm::vec3(-4.0f, -1.25f, 0.0f));
-            model = glm::scale(model, glm::vec3(-1.0f, -1.0f, -1.0f));
-            model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+            model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
             modelShader.setMat4("model", model);
+
+            // Используем натуральные цвета из .mtl файла или переопределяем
+            if (materialSettings.useTruckOverride) {
+                modelShader.setBool("use_material_override", true);
+                modelShader.setVec3("material_override_diffuse", materialSettings.truckColor);
+            } else {
+                modelShader.setBool("use_material_override", false);
+            }
 
             truckModel->draw(modelShader);
             drawCalls++;
@@ -178,9 +218,16 @@ int main() {
         if (wheelModel) {
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, glm::vec3(0.5f, -1.25f, 0.0f));
-            model = glm::scale(model, glm::vec3(-1.0f, -1.0f, -1.0f));
-            model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+            model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
             modelShader.setMat4("model", model);
+
+            // Используем натуральные цвета из .mtl файла или переопределяем
+            if (materialSettings.useWheelOverride) {
+                modelShader.setBool("use_material_override", true);
+                modelShader.setVec3("material_override_diffuse", materialSettings.wheelColor);
+            } else {
+                modelShader.setBool("use_material_override", false);
+            }
 
             wheelModel->draw(modelShader);
             drawCalls++;
@@ -255,6 +302,13 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         }
     }
+
+    // Быстрое переключение между натуральными и переопределенными цветами
+    if (key == GLFW_KEY_M && action == GLFW_PRESS) {
+        materialSettings.useTruckOverride = !materialSettings.useTruckOverride;
+        materialSettings.useWheelOverride = !materialSettings.useWheelOverride;
+        std::cout << "Material override: " << (materialSettings.useTruckOverride ? "ON" : "OFF") << std::endl;
+    }
 }
 
 void processInput(GLFWwindow* window) {
@@ -288,6 +342,7 @@ void renderUI() {
     ImGui::Text("Right Mouse + Move: Rotate camera");
     ImGui::Text("Mouse Wheel: Zoom in/out");
     ImGui::Text("F1: Toggle camera control");
+    ImGui::Text("M: Toggle material override");  // Добавлено
     ImGui::Text("ESC: Exit");
 
     ImGui::End();
@@ -320,6 +375,84 @@ void renderUI() {
         camera->setRadius(20.0f);
         camera->setAlpha(glm::radians(90.0f));
         camera->setBeta(glm::radians(60.0f));
+    }
+
+    ImGui::End();
+
+    // УЛУЧШЕННОЕ: Material Settings Window
+    ImGui::Begin("Material & Lighting Settings");
+
+    // Режим отображения материалов
+    ImGui::Text("Material Display Mode:");
+    ImGui::Separator();
+
+    if (ImGui::Button("Use Natural Colors (.mtl)")) {
+        materialSettings.useTruckOverride = false;
+        materialSettings.useWheelOverride = false;
+    }
+    ImGui::SameLine();
+    if (ImGui::Button("Use Custom Colors")) {
+        materialSettings.useTruckOverride = true;
+        materialSettings.useWheelOverride = true;
+    }
+
+    ImGui::Spacing();
+
+    // Truck Material
+    ImGui::Text("Truck Material:");
+    ImGui::Checkbox("Override Truck Color", &materialSettings.useTruckOverride);
+    if (materialSettings.useTruckOverride) {
+        ImGui::ColorEdit3("Truck Color", &materialSettings.truckColor[0]);
+    }
+
+    ImGui::Separator();
+
+    // Wheel Material
+    ImGui::Text("Wheel Material:");
+    ImGui::Checkbox("Override Wheel Color", &materialSettings.useWheelOverride);
+    if (materialSettings.useWheelOverride) {
+        ImGui::ColorEdit3("Wheel Color", &materialSettings.wheelColor[0]);
+    }
+
+    ImGui::Separator();
+
+    // Material Enhancement
+    ImGui::Text("Material Enhancement:");
+    ImGui::SliderFloat("Material Brightness", &materialSettings.materialBrightness, 0.1f, 3.0f);
+    ImGui::Checkbox("Enhance Contrast", &materialSettings.enhanceContrast);
+
+    ImGui::Separator();
+
+    // Lighting Settings
+    ImGui::Text("Lighting Settings:");
+    ImGui::ColorEdit3("Ambient Strength", &materialSettings.ambientStrength[0]);
+    ImGui::ColorEdit3("Light Color", &materialSettings.lightColor[0]);
+    ImGui::SliderFloat3("Light Position", &materialSettings.lightPos[0], -20.0f, 20.0f);
+
+    ImGui::Separator();
+
+    if (ImGui::Button("Reset to Natural Colors")) {
+        materialSettings.useTruckOverride = false;
+        materialSettings.useWheelOverride = false;
+        materialSettings.materialBrightness = 1.0f;
+        materialSettings.enhanceContrast = true;
+        materialSettings.ambientStrength = glm::vec3(0.3f, 0.3f, 0.3f);
+        materialSettings.lightColor = glm::vec3(1.2f, 1.2f, 1.0f);
+        materialSettings.lightPos = glm::vec3(10.0f, 15.0f, 10.0f);
+    }
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Reset to Custom Colors")) {
+        materialSettings.useTruckOverride = true;
+        materialSettings.useWheelOverride = true;
+        materialSettings.truckColor = glm::vec3(0.8f, 0.2f, 0.2f);
+        materialSettings.wheelColor = glm::vec3(0.1f, 0.1f, 0.1f);
+        materialSettings.materialBrightness = 1.0f;
+        materialSettings.enhanceContrast = true;
+        materialSettings.ambientStrength = glm::vec3(0.3f, 0.3f, 0.3f);
+        materialSettings.lightColor = glm::vec3(1.2f, 1.2f, 1.0f);
+        materialSettings.lightPos = glm::vec3(10.0f, 15.0f, 10.0f);
     }
 
     ImGui::End();
