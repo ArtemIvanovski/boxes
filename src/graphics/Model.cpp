@@ -67,27 +67,17 @@ void Model::optimizeMeshes() {
 void Model::loadModel(const std::string& path) {
     std::cout << "Attempting to load model: " << path << std::endl;
 
-    // Проверяем существование файлов
-    std::ifstream objFile(path);
-    if (!objFile.good()) {
-        std::cerr << "OBJ file does not exist: " << path << std::endl;
-        throw std::runtime_error("OBJ file not found: " + path);
+    // Проверяем существование файла
+    std::ifstream file(path);
+    if (!file.good()) {
+        std::cerr << "Model file does not exist: " << path << std::endl;
+        throw std::runtime_error("Model file not found: " + path);
     }
-    objFile.close();
-
-    // Проверяем существование .mtl файла
-    std::string mtlPath = path.substr(0, path.find_last_of('.')) + ".mtl";
-    std::ifstream mtlFile(mtlPath);
-    if (mtlFile.good()) {
-        std::cout << "Found corresponding MTL file: " << mtlPath << std::endl;
-        mtlFile.close();
-    } else {
-        std::cout << "Warning: No MTL file found at: " << mtlPath << std::endl;
-    }
+    file.close();
 
     Assimp::Importer importer;
 
-    // Более конкретные флаги для обработки .obj/.mtl файлов
+    // Улучшенные флаги для обработки моделей
     unsigned int flags = aiProcess_Triangulate |           // Конвертируем все полигоны в треугольники
                         aiProcess_FlipUVs |                // Переворачиваем UV координаты
                         aiProcess_GenNormals |             // Генерируем нормали если их нет
@@ -98,59 +88,35 @@ void Model::loadModel(const std::string& path) {
                         aiProcess_ImproveCacheLocality |   // Улучшаем cache locality
                         aiProcess_RemoveRedundantMaterials | // Удаляем дублирующиеся материалы
                         aiProcess_FixInfacingNormals |     // Исправляем направление нормалей
-                        aiProcess_CalcTangentSpace |       // Вычисляем тангенс пространство
-                        aiProcess_ValidateDataStructure |  // Проверяем структуру данных
-                        aiProcess_SortByPType;             // Сортируем по типу примитива
-
-    std::cout << "Loading with flags: " << std::hex << flags << std::dec << std::endl;
+                        aiProcess_CalcTangentSpace |       // Вычисляем tangent space
+                        aiProcess_ValidateDataStructure;   // Валидируем структуру данных
 
     const aiScene* scene = importer.ReadFile(path, flags);
 
     if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
-        std::cerr << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
-        std::cerr << "Failed to load model at path: " << path << std::endl;
+        std::cerr << "Assimp error: " << importer.GetErrorString() << std::endl;
         throw std::runtime_error("Failed to load model: " + path);
     }
 
-    std::cout << "Model loaded successfully!" << std::endl;
-    std::cout << "Scene info:" << std::endl;
-    std::cout << "  Meshes: " << scene->mNumMeshes << std::endl;
-    std::cout << "  Materials: " << scene->mNumMaterials << std::endl;
-    std::cout << "  Textures: " << scene->mNumTextures << std::endl;
-    std::cout << "  Animations: " << scene->mNumAnimations << std::endl;
+    std::cout << "Model loaded successfully: " << path << std::endl;
+    std::cout << "Meshes count: " << scene->mNumMeshes << std::endl;
+    std::cout << "Materials count: " << scene->mNumMaterials << std::endl;
 
-    // Выводим информацию о материалах для отладки
-    for (unsigned int i = 0; i < scene->mNumMaterials; i++) {
-        aiMaterial* mat = scene->mMaterials[i];
-        aiString name;
-        if (mat->Get(AI_MATKEY_NAME, name) == AI_SUCCESS) {
-            std::cout << "  Material " << i << ": " << name.C_Str() << std::endl;
-        }
-    }
-
+    // Сохраняем путь к директории для загрузки текстур
     directory = path.substr(0, path.find_last_of('/'));
-    std::cout << "Model directory: " << directory << std::endl;
 
+    // Обрабатываем все узлы рекурсивно
     processNode(scene->mRootNode, scene);
-
-    // Post-loading optimizations
-    optimizeMeshes();
-
-    std::cout << "Model processing completed!" << std::endl;
-    std::cout << "Final statistics:" << std::endl;
-    std::cout << "  Total meshes created: " << meshes.size() << std::endl;
-    std::cout << "  Total triangles: " << getTriangleCount() << std::endl;
-    std::cout << "  Total vertices: " << getVertexCount() << std::endl;
 }
 
 void Model::processNode(aiNode* node, const aiScene* scene) {
-    // Process all meshes in current node
+    // Обрабатываем все меши узла
     for (unsigned int i = 0; i < node->mNumMeshes; i++) {
         aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
         meshes.push_back(processMesh(mesh, scene));
     }
 
-    // Process all child nodes
+    // Рекурсивно обрабатываем дочерние узлы
     for (unsigned int i = 0; i < node->mNumChildren; i++) {
         processNode(node->mChildren[i], scene);
     }
@@ -160,32 +126,35 @@ std::unique_ptr<Mesh> Model::processMesh(aiMesh* mesh, const aiScene* scene) {
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
-    Material material; // Создаем материал
 
-    // Reserve memory for better performance
-    vertices.reserve(mesh->mNumVertices);
-    indices.reserve(mesh->mNumFaces * 3);
-
-    // Process vertices
+    // Обрабатываем вершины
     for (unsigned int i = 0; i < mesh->mNumVertices; i++) {
         Vertex vertex;
 
-        // Position
-        vertex.position.x = mesh->mVertices[i].x;
-        vertex.position.y = mesh->mVertices[i].y;
-        vertex.position.z = mesh->mVertices[i].z;
+        // Позиция
+        vertex.position = glm::vec3(
+            mesh->mVertices[i].x,
+            mesh->mVertices[i].y,
+            mesh->mVertices[i].z
+        );
 
-        // Normals
+        // Нормали
         if (mesh->HasNormals()) {
-            vertex.normal.x = mesh->mNormals[i].x;
-            vertex.normal.y = mesh->mNormals[i].y;
-            vertex.normal.z = mesh->mNormals[i].z;
+            vertex.normal = glm::vec3(
+                mesh->mNormals[i].x,
+                mesh->mNormals[i].y,
+                mesh->mNormals[i].z
+            );
+        } else {
+            vertex.normal = glm::vec3(0.0f, 1.0f, 0.0f); // Default normal
         }
 
-        // Texture coordinates
+        // Текстурные координаты
         if (mesh->mTextureCoords[0]) {
-            vertex.texCoords.x = mesh->mTextureCoords[0][i].x;
-            vertex.texCoords.y = mesh->mTextureCoords[0][i].y;
+            vertex.texCoords = glm::vec2(
+                mesh->mTextureCoords[0][i].x,
+                mesh->mTextureCoords[0][i].y
+            );
         } else {
             vertex.texCoords = glm::vec2(0.0f, 0.0f);
         }
@@ -193,7 +162,7 @@ std::unique_ptr<Mesh> Model::processMesh(aiMesh* mesh, const aiScene* scene) {
         vertices.push_back(vertex);
     }
 
-    // Process indices
+    // Обрабатываем индексы
     for (unsigned int i = 0; i < mesh->mNumFaces; i++) {
         aiFace face = mesh->mFaces[i];
         for (unsigned int j = 0; j < face.mNumIndices; j++) {
@@ -201,111 +170,70 @@ std::unique_ptr<Mesh> Model::processMesh(aiMesh* mesh, const aiScene* scene) {
         }
     }
 
-    // Process materials - УЛУЧШЕННАЯ ЗАГРУЗКА МАТЕРИАЛОВ
+    // Обрабатываем материалы
+    Material material;
     if (mesh->mMaterialIndex >= 0) {
-        aiMaterial* mat = scene->mMaterials[mesh->mMaterialIndex];
+        aiMaterial* aiMat = scene->mMaterials[mesh->mMaterialIndex];
+        
+        // Загружаем диффузные текстуры
+        std::vector<Texture> diffuseMaps = loadMaterialTextures(aiMat, aiTextureType_DIFFUSE, "texture_diffuse");
+        textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
 
-        // Получаем имя материала для отладки
-        aiString materialName;
-        if (mat->Get(AI_MATKEY_NAME, materialName) == AI_SUCCESS) {
-            std::cout << "Loading material: " << materialName.C_Str() << std::endl;
-        }
+        // Загружаем specular текстуры
+        std::vector<Texture> specularMaps = loadMaterialTextures(aiMat, aiTextureType_SPECULAR, "texture_specular");
+        textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 
-        // Загружаем цвета материала
-        aiColor3D color;
+        // Загружаем нормальные карты
+        std::vector<Texture> normalMaps = loadMaterialTextures(aiMat, aiTextureType_HEIGHT, "texture_normal");
+        textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
 
-        // Ambient color
-        if (mat->Get(AI_MATKEY_COLOR_AMBIENT, color) == AI_SUCCESS) {
-            material.ambient = glm::vec3(color.r, color.g, color.b);
-            std::cout << "  Ambient: (" << color.r << ", " << color.g << ", " << color.b << ")" << std::endl;
-        } else {
-            // Устанавливаем разумные значения по умолчанию
-            material.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
-        }
+        // Загружаем высотные карты
+        std::vector<Texture> heightMaps = loadMaterialTextures(aiMat, aiTextureType_AMBIENT, "texture_height");
+        textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
 
-        // Diffuse color (основной цвет)
-        if (mat->Get(AI_MATKEY_COLOR_DIFFUSE, color) == AI_SUCCESS) {
+        // Устанавливаем материал
+        aiColor3D color(0.0f, 0.0f, 0.0f);
+        float shininess = 32.0f;
+
+        // Диффузный цвет
+        if (aiMat->Get(AI_MATKEY_COLOR_DIFFUSE, color) == AI_SUCCESS) {
             material.diffuse = glm::vec3(color.r, color.g, color.b);
-            std::cout << "  Diffuse: (" << color.r << ", " << color.g << ", " << color.b << ")" << std::endl;
-
-            // Проверяем, не слишком ли темный материал
-            float brightness = (color.r + color.g + color.b) / 3.0f;
-            if (brightness < 0.05f) {
-                std::cout << "  Warning: Material is very dark, using default gray" << std::endl;
-                material.diffuse = glm::vec3(0.6f, 0.6f, 0.6f);
-            }
         } else {
-            // Если диффузный цвет не найден, используем светло-серый
-            std::cout << "  No diffuse color found, using default" << std::endl;
-            material.diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
+            material.diffuse = glm::vec3(0.7f, 0.7f, 0.7f); // Default gray
         }
 
-        // Specular color
-        if (mat->Get(AI_MATKEY_COLOR_SPECULAR, color) == AI_SUCCESS) {
-            material.specular = glm::vec3(color.r, color.g, color.b);
-            std::cout << "  Specular: (" << color.r << ", " << color.g << ", " << color.b << ")" << std::endl;
+        // Ambient цвет
+        if (aiMat->Get(AI_MATKEY_COLOR_AMBIENT, color) == AI_SUCCESS) {
+            material.ambient = glm::vec3(color.r, color.g, color.b);
         } else {
-            material.specular = glm::vec3(0.5f, 0.5f, 0.5f);
+            material.ambient = glm::vec3(0.2f, 0.2f, 0.2f); // Default ambient
+        }
+
+        // Specular цвет
+        if (aiMat->Get(AI_MATKEY_COLOR_SPECULAR, color) == AI_SUCCESS) {
+            material.specular = glm::vec3(color.r, color.g, color.b);
+        } else {
+            material.specular = glm::vec3(0.5f, 0.5f, 0.5f); // Default specular
         }
 
         // Shininess
-        float shininess;
-        if (mat->Get(AI_MATKEY_SHININESS, shininess) == AI_SUCCESS) {
-            material.shininess = shininess;
-            std::cout << "  Shininess: " << shininess << std::endl;
-        } else {
-            material.shininess = 32.0f;
+        if (aiMat->Get(AI_MATKEY_SHININESS, shininess) != AI_SUCCESS) {
+            shininess = 32.0f; // Default shininess
         }
+        material.shininess = shininess;
 
-        // Дополнительные свойства материала для отладки
-        float opacity;
-        if (mat->Get(AI_MATKEY_OPACITY, opacity) == AI_SUCCESS) {
-            std::cout << "  Opacity: " << opacity << std::endl;
+        // Если материал слишком темный, делаем его светлее
+        if (glm::length(material.diffuse) < 0.1f) {
+            material.diffuse = glm::vec3(0.7f, 0.7f, 0.7f);
         }
-
-        // Metallic/Roughness для PBR материалов (если есть)
-        float metallic, roughness;
-        if (mat->Get(AI_MATKEY_METALLIC_FACTOR, metallic) == AI_SUCCESS) {
-            std::cout << "  Metallic: " << metallic << std::endl;
-        }
-        if (mat->Get(AI_MATKEY_ROUGHNESS_FACTOR, roughness) == AI_SUCCESS) {
-            std::cout << "  Roughness: " << roughness << std::endl;
-        }
-
-        // Загружаем текстуры
-        std::vector<Texture> diffuseMaps = loadMaterialTextures(mat, aiTextureType_DIFFUSE, "texture_diffuse");
-        textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
-
-        if (!diffuseMaps.empty()) {
-            std::cout << "  Found " << diffuseMaps.size() << " diffuse texture(s)" << std::endl;
-        }
-
-        std::vector<Texture> specularMaps = loadMaterialTextures(mat, aiTextureType_SPECULAR, "texture_specular");
-        textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
-
-        if (!specularMaps.empty()) {
-            std::cout << "  Found " << specularMaps.size() << " specular texture(s)" << std::endl;
-        }
-
-        // Также попробуем загрузить normal maps
-        std::vector<Texture> normalMaps = loadMaterialTextures(mat, aiTextureType_NORMALS, "texture_normal");
-        textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
-
-        if (!normalMaps.empty()) {
-            std::cout << "  Found " << normalMaps.size() << " normal texture(s)" << std::endl;
-        }
-
-        std::cout << "  Material loaded successfully!" << std::endl;
     } else {
-        std::cout << "No material found for mesh, using default material" << std::endl;
-        // Устанавливаем значения по умолчанию
+        // Default material
+        material.diffuse = glm::vec3(0.7f, 0.7f, 0.7f);
         material.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
-        material.diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
         material.specular = glm::vec3(0.5f, 0.5f, 0.5f);
         material.shininess = 32.0f;
     }
 
-    // Создаем mesh с материалом
     return std::make_unique<Mesh>(vertices, indices, textures, material);
 }
 

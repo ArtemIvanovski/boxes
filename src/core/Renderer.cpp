@@ -4,24 +4,39 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 #include <iostream>
+#include <array>
 
 Renderer::Renderer() {
     // Initialize shaders
     modelShader = std::make_unique<Shader>("assets/shaders/model.vs", "assets/shaders/model.fs");
 
+
+    // Set lighting - как HemisphericLight в BabylonJS
+    modelShader->setVec3("lightPos", glm::vec3(-1.0f, 1.0f, -1.0f));
+    modelShader->setVec3("lightColor", glm::vec3(1.5f, 1.5f, 1.5f)); // intensity 1.5
+    modelShader->setVec3("ambientStrength", glm::vec3(0.4f, 0.4f, 0.4f));
+    
+    // Для прозрачности (как в BabylonJS)
+    modelShader->setFloat("alpha", 0.3f);
+    modelShader->setBool("useAlpha", true);
+
     // Initialize truck presets
     truckPresets = {
-        {"Малый грузовик", 1203, 239, 235},
-        {"Средний грузовик", 1340, 239, 235},
-        {"Большой грузовик", 1360, 260, 245},
+        {"Малый грузовик", 590, 239, 235},
+        {"Компактный грузовик", 1203, 239, 235},
+        {"Стандартный грузовик", 1340, 239, 235},
+        {"Средний грузовик", 1360, 260, 245},
         {"Увеличенный грузовик", 1360, 300, 245},
-        {"Максимальный грузовик", 1650, 260, 245},
-        {"Компактный грузовик", 590, 239, 235}
+        {"Большой грузовик", 1650, 260, 245}
     };
 }
 
 Renderer::~Renderer() {
     cleanupUI();
+}
+
+void Renderer::setScene(Scene* scene) {
+    currentScene = scene;
 }
 
 void Renderer::initializeUI(GLFWwindow* window) {
@@ -57,13 +72,11 @@ void Renderer::render(const Scene& scene, const Camera& camera) {
     modelShader->setMat4("projection", projection);
     modelShader->setMat4("view", view);
 
-    // Set lighting
-    modelShader->setVec3("lightPos", glm::vec3(10.0f, 15.0f, 10.0f));
-    modelShader->setVec3("lightColor", glm::vec3(1.2f, 1.2f, 1.0f));
+    // Set lighting (как в BabylonJS HemisphericLight)
+    modelShader->setVec3("lightPos", glm::vec3(-1.0f, 1.0f, -1.0f));
+    modelShader->setVec3("lightColor", glm::vec3(1.5f, 1.5f, 1.5f)); // intensity 1.5 как в BabylonJS
     modelShader->setVec3("viewPos", camera.position);
-    modelShader->setVec3("ambientStrength", glm::vec3(0.3f, 0.3f, 0.3f));
-    modelShader->setFloat("materialBrightness", 1.0f);
-    modelShader->setBool("enhanceContrast", true);
+    modelShader->setVec3("ambientStrength", glm::vec3(0.4f, 0.4f, 0.4f));
 
     // Render scene
     scene.render(*modelShader);
@@ -77,6 +90,12 @@ void Renderer::renderUI(const Scene& scene, GLFWwindow* window) {
     renderMainMenuBar(window);
     renderTruckInfoPanel(scene);
     renderPerformancePanel();
+    
+    // Рендерим панель коробок
+    auto* boxManager = const_cast<Scene&>(scene).getBoxManager();
+    if (boxManager) {
+        boxManager->renderBoxPanel();
+    }
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -152,7 +171,13 @@ void Renderer::renderMainMenuBar(GLFWwindow* window) {
             ImGui::PopItemWidth();
             ImGui::Separator();
 
-            ImGui::Checkbox("Открыть тент", &truckSettings.tentOpen);
+            bool tentChanged = ImGui::Checkbox("Открыть тент", &truckSettings.tentOpen);
+            if (tentChanged) {
+                setTentOpen(truckSettings.tentOpen);
+                if (currentScene) {
+                    currentScene->setTentOpen(truckSettings.tentOpen);
+                }
+            }
 
             ImGui::EndMenu();
         }
@@ -183,17 +208,55 @@ void Renderer::renderPerformancePanel() {
 glm::vec3 Renderer::TruckSettings::getCurrentSize() const {
     if (useCustom) {
         return glm::vec3(customWidth, customHeight, customDepth);
+    } else {
+        // Возвращаем размеры текущего пресета вместо значений по умолчанию
+        if (currentPreset >= 0 && currentPreset < 6) {  // Проверяем границы
+            const std::array<int, 3> presetSizes[6] = {
+                {590, 239, 235},   // Малый грузовик
+                {1203, 239, 235},  // Компактный грузовик
+                {1340, 239, 235},  // Стандартный грузовик
+                {1360, 260, 245},  // Средний грузовик
+                {1360, 300, 245},  // Увеличенный грузовик
+                {1650, 260, 245}   // Большой грузовик
+            };
+            const auto& preset = presetSizes[currentPreset];
+            return glm::vec3(preset[0], preset[1], preset[2]);
+        }
+        return glm::vec3(1650, 260, 245); // Fallback
     }
-    return glm::vec3(1650, 260, 245); // Default
 }
 
 void Renderer::updateTruckSize() {
     glm::vec3 size = truckSettings.getCurrentSize();
     std::cout << "Truck size updated: " << size.x << "x" << size.y << "x" << size.z << std::endl;
+    if (currentScene) {
+        currentScene->updateTruckSize(size.x, size.y, size.z);
+        std::cout << "Scene truck size updated successfully" << std::endl;
+    } else {
+        std::cerr << "Warning: Scene not set in renderer, cannot update truck size" << std::endl;
+    }
 }
 
 void Renderer::cleanupUI() {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
+}
+
+void Renderer::setTentOpen(bool open) {
+    truckSettings.tentOpen = open;
+    updateTentAlpha();
+}
+
+bool Renderer::isTentOpen() const {
+    return truckSettings.tentOpen;
+}
+
+void Renderer::updateTentAlpha() {
+    if (truckSettings.tentOpen) {
+        modelShader->setFloat("alpha", 0.0f); // Полностью прозрачный
+    } else {
+        modelShader->setFloat("alpha", truckSettings.tentAlpha); // Полупрозрачный
+    }
+    modelShader->setBool("useAlpha", true);
 }

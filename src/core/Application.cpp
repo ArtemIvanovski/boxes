@@ -12,6 +12,7 @@ Application::~Application() {
     cleanup();
 }
 
+
 void Application::initializeSubsystems() {
     // Initialize window
     window = std::make_unique<Window>(1920, 1080, "Truck Loading Simulator");
@@ -25,13 +26,21 @@ void Application::initializeSubsystems() {
     // Initialize scene
     scene = std::make_unique<Scene>();
 
-    // Load models
+    renderer->setScene(scene.get());
+    // Load models (GLB files)
     try {
-        scene->loadTruckModel("assets/models/lorry.obj");
-        scene->loadWheelModel("assets/models/weel.obj");
+        scene->loadTruckModel("assets/models/lorry.glb");
+        scene->loadWheelModel("assets/models/weel.glb");
     } catch (const std::exception& e) {
         std::cerr << "Error loading models: " << e.what() << std::endl;
-        throw;
+        // Fallback to OBJ files if GLB not available
+        try {
+            scene->loadTruckModel("assets/models/lorry.obj");
+            scene->loadWheelModel("assets/models/weel.obj");
+        } catch (const std::exception& e2) {
+            std::cerr << "Error loading fallback models: " << e2.what() << std::endl;
+            throw;
+        }
     }
 
     // Setup callbacks
@@ -39,21 +48,21 @@ void Application::initializeSubsystems() {
 }
 
 void Application::setupCamera() {
+    // Настройки камеры точно как в BabylonJS
     camera = std::make_unique<Camera>(
-        glm::radians(90.0f),    // alpha
-        glm::radians(60.0f),    // beta
-        20.0f,                  // radius
-        glm::vec3(0.0f, 3.0f, 0.0f)  // target
+        glm::radians(90.0f),    // alpha = Math.PI / 2
+        glm::radians(60.0f),    // beta = Math.PI / 3
+        20.0f,                  // radius = 2000 (масштабированный)
+        glm::vec3(0.0f, 3.0f, 0.0f)  // target = (0, 300, 0) (масштабированный)
     );
-    camera->minRadius = 1.5f;
-    camera->maxRadius = 50.0f;
+    camera->minRadius = 1.5f;   // 150 масштабированный
+    camera->maxRadius = 35.0f;  // 3500 масштабированный
+    camera->maxBeta = glm::radians(89.1f); // (Math.PI / 2) * 0.99
 }
 
 void Application::setupCallbacks() {
     // Mouse callback
     window->setMouseCallback([this](double xpos, double ypos) {
-        if (!cameraControlEnabled) return;
-
         if (firstMouse) {
             lastX = static_cast<float>(xpos);
             lastY = static_cast<float>(ypos);
@@ -66,8 +75,22 @@ void Application::setupCallbacks() {
         lastX = static_cast<float>(xpos);
         lastY = static_cast<float>(ypos);
 
+        // Handle BoxManager mouse input first
+        if (scene && scene->getBoxManager()) {
+            bool leftPressed = window->isMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT);
+            bool rightPressed = window->isMouseButtonPressed(GLFW_MOUSE_BUTTON_RIGHT);
+            scene->getBoxManager()->handleMouseInput(xpos, ypos, leftPressed, rightPressed);
+        }
+
+        // Правая кнопка мыши - движение камеры вдоль сцены (как в BabylonJS)
         if (window->isMouseButtonPressed(GLFW_MOUSE_BUTTON_RIGHT)) {
             camera->processMouseMovement(xoffset, yoffset);
+        }
+        
+        // Левая кнопка мыши - вращение грузовика (как в BabylonJS)
+        if (window->isMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT)) {
+            // TODO: Implement truck rotation with left click
+            // This should rotate the truck model when left-clicking and dragging
         }
     });
 
@@ -78,44 +101,22 @@ void Application::setupCallbacks() {
         }
     });
 
-    // Key callback
+    // Keyboard callback
     window->setKeyCallback([this](int key, int scancode, int action, int mods) {
-        if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-            shutdown();
-        }
-
-        if (key == GLFW_KEY_F1 && action == GLFW_PRESS) {
-            cameraControlEnabled = !cameraControlEnabled;
-        }
-
-        // Camera presets
         if (action == GLFW_PRESS) {
             switch (key) {
-                case GLFW_KEY_1: // Top view
-                    camera->setTarget(glm::vec3(0.0f, 0.0f, 0.0f));
-                    camera->setRadius(20.0f);
-                    camera->setAlpha(glm::radians(90.0f));
-                    camera->setBeta(glm::radians(5.0f));
+                case GLFW_KEY_ESCAPE:
+                    window->close();
                     break;
-                case GLFW_KEY_2: // Left view
-                    camera->setTarget(glm::vec3(0.0f, 0.0f, 0.0f));
-                    camera->setRadius(20.0f);
-                    camera->setAlpha(glm::radians(0.0f));
-                    camera->setBeta(glm::radians(90.0f));
-                    break;
-                case GLFW_KEY_3: // Right view
-                    camera->setTarget(glm::vec3(0.0f, 0.0f, 0.0f));
-                    camera->setRadius(20.0f);
-                    camera->setAlpha(glm::radians(180.0f));
-                    camera->setBeta(glm::radians(90.0f));
-                    break;
-                case GLFW_KEY_4: // Isometric view
-                    camera->setTarget(glm::vec3(0.0f, 3.0f, 0.0f));
-                    camera->setRadius(20.0f);
-                    camera->setAlpha(glm::radians(45.0f));
-                    camera->setBeta(glm::radians(60.0f));
+                case GLFW_KEY_F11:
+                    window->toggleFullscreen();
                     break;
             }
+        }
+        
+        // Handle BoxManager keyboard input
+        if (scene && scene->getBoxManager()) {
+            scene->getBoxManager()->handleKeyInput(key, action);
         }
     });
 

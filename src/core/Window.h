@@ -35,6 +35,10 @@ public:
     bool isMouseButtonPressed(int button) const;
 
     GLFWwindow* getGLFWWindow() const { return window; }
+    
+    // Window control methods
+    void close();
+    void toggleFullscreen();
 
     // Event callback setters
     void setResizeCallback(std::function<void(int, int)> callback) { resizeCallback = callback; }

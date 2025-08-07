@@ -14,6 +14,7 @@ Window::Window(int width, int height, const std::string& title)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SAMPLES, 4);
+    glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE); // Запускаем максимизированным
 
     window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
     if (!window) {
@@ -71,6 +72,37 @@ bool Window::isKeyPressed(int key) const {
 
 bool Window::isMouseButtonPressed(int button) const {
     return glfwGetMouseButton(window, button) == GLFW_PRESS;
+}
+
+void Window::close() {
+    if (window) {
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+    }
+}
+
+void Window::toggleFullscreen() {
+    if (!window) return;
+    
+    static bool isFullscreen = false;
+    static int savedWidth, savedHeight, savedX, savedY;
+    
+    if (!isFullscreen) {
+        // Save current window state
+        glfwGetWindowPos(window, &savedX, &savedY);
+        glfwGetWindowSize(window, &savedWidth, &savedHeight);
+        
+        // Get monitor info
+        GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+        const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+        
+        // Switch to fullscreen
+        glfwSetWindowMonitor(window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
+        isFullscreen = true;
+    } else {
+        // Restore window state
+        glfwSetWindowMonitor(window, nullptr, savedX, savedY, savedWidth, savedHeight, 0);
+        isFullscreen = false;
+    }
 }
 
 // Static callback functions
