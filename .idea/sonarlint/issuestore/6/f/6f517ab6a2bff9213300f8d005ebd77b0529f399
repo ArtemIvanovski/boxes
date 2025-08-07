@@ -1,0 +1,16 @@
+
+c	cpp:S5276i"Gimplicit conversion loses floating-point precision: 'double' to 'float'(î‰åâ8•şêÌ€3
+c	cpp:S5276j"Gimplicit conversion loses floating-point precision: 'double' to 'float'(˜Úôß8–şêÌ€3
+h	cpp:S5276k"Gimplicit conversion loses floating-point precision: 'double' to 'float'(ì»áºşÿÿÿÿ8–şêÌ€3
+‡	cpp:S5276p"Gimplicit conversion loses floating-point precision: 'double' to 'float'(ú³¬ùÿÿÿÿJ$481bc1a4-c440-4e6d-b529-72a4d9701832
+‡	cpp:S5276q"Gimplicit conversion loses floating-point precision: 'double' to 'float'(šˆ¯øÿÿÿÿJ$79cf8df5-ef5a-430c-b893-3d6fdda62610
+‡	cpp:S5276r"Gimplicit conversion loses floating-point precision: 'double' to 'float'(óÈÇ›øÿÿÿÿJ$7a8b02a9-6b43-4fd5-bee5-041b00b1d64c
+“	cpp:S3229"SField "front" is initialized before field "worldUp", field "yaw" and field "pitch".(Äª¹êøÿÿÿÿJ$b4c3b152-b6c1-448f-b727-aa8cef714e0d
+p	cpp:S3229"0Reorder initializers to match the runtime order.(½®¾ƒıÿÿÿÿJ$29a2365f-0f9e-451a-a2d2-9e7123863b0e
+«	cpp:S3230"kDo not use the constructor's initializer list for data member "zoom". Use the in-class initializer instead.(Òû”¾ùÿÿÿÿJ$9bbf0a01-a55e-4c3c-9fde-7f894b369e7a
+«	cpp:S3230"pDo not use the constructor's initializer list for data member "maxRadius". Use the in-class initializer instead.(­ÑøòJ$70128c89-4624-4679-8be4-d04648e6556c
+«	cpp:S3230"pDo not use the constructor's initializer list for data member "minRadius". Use the in-class initializer instead.(­ÑøòJ$30831021-01db-4c39-ac6f-605e22baa2e2
+´	cpp:S3230"tDo not use the constructor's initializer list for data member "movementSpeed". Use the in-class initializer instead.(Òû”¾ùÿÿÿÿJ$9a9e92ef-c71a-4507-8bb9-8bd09215e979
+¬	cpp:S3230"lDo not use the constructor's initializer list for data member "front". Use the in-class initializer instead.(¯£ÜùùÿÿÿÿJ$062fff97-c5d2-4539-9338-a4efd5015b7f
+©	cpp:S3230"nDo not use the constructor's initializer list for data member "maxBeta". Use the in-class initializer instead.(­ÑøòJ$f5cd2ae9-08cb-48e6-860a-86a9271f55b4
+·	cpp:S3230"wDo not use the constructor's initializer list for data member "mouseSensitivity". Use the in-class initializer instead.(Òû”¾ùÿÿÿÿJ$8843d2c7-6112-4b8a-b993-14205f2adb7b

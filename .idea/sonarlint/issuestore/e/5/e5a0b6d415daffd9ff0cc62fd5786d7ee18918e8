@@ -1,0 +1,13 @@
+
+v	cpp:S1135\"4Complete the task associated to this "TODO" comment.(Âÿ…÷8ÇÃ« ˆ3J$de7cfaed-a0ab-4768-9a37-20dde79405a5
+o	cpp:S1117“",declaration shadows a field of 'Application'(ï…È±8ëŞ‰Îÿ2J$3a5ad9ef-4aee-4a7f-9f27-44c6d4ed654e
+{	cpp:S1181""9Catch a more specific exception instead of a generic one.(¿Î†Ş8ÅÆ« ˆ3J$b50dc1f5-e277-4e28-b6dd-4f17271755d5
+Ô	cpp:S1188A"‘This lambda has 21 lines, which is greater than the 20 lines authorized. Split it into several lambdas or functions, or make it a named function.(–Íÿ‡8ÌÆ« ˆ3J$c6371e6e-1a96-40ea-b089-4b6bbecb8b90
+›	cpp:S1172b"YRemove the unused parameter "xoffset", make it unnamed, or declare it "[[maybe_unused]]".(“‘Õ8˜ß‰Îÿ2J$9029bd56-5a69-43f8-8793-04d7796cd864
+¡	cpp:S1172i"ZRemove the unused parameter "scancode", make it unnamed, or declare it "[[maybe_unused]]".(¬Äùÿÿÿÿ8ß‰Îÿ2J$c66e2ef2-8ec7-4202-8ce7-8a76b64707fc
+	cpp:S1172i"VRemove the unused parameter "mods", make it unnamed, or declare it "[[maybe_unused]]".(¬Äùÿÿÿÿ8ß‰Îÿ2J$bb7f8059-a077-4e0e-844d-5167ddadf7c4
+p	cpp:S3562k".Add a "default" case to this switch statement.(°Ó÷8¢ß‰Îÿ2J$b1cf4947-6e64-42ca-8065-41646ab1336a
+j	cpp:S1481|"(Remove the unused lambda capture "this".(ì §8¶ß‰Îÿ2J$a840e530-7b6b-4f47-8888-24344dcf0ae9
+™	cpp:S1172|"WRemove the unused parameter "width", make it unnamed, or declare it "[[maybe_unused]]".(ì §8¶ß‰Îÿ2J$44fba4eb-8703-4ac1-a55c-69a6c54ae3f0
+š	cpp:S1172|"XRemove the unused parameter "height", make it unnamed, or declare it "[[maybe_unused]]".(ì §8¶ß‰Îÿ2J$eb0bc900-94ab-4d8d-903d-411e2b0f4910
+j	cpp:S5827„"'Replace the redundant type with "auto".(‚ŸÎñ8¶ß‰Îÿ2J$c4faa605-573c-48a3-bb17-837dbf8cd29f

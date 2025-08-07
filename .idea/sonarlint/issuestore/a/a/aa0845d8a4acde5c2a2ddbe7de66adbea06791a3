@@ -1,0 +1,14 @@
+
+‡cpp:S112
+"FDefine and throw a dedicated exception instead of using a generic one.(’‘Òã8½æÍÌ€3J$16ff9f85-fe16-4e9d-83a6-bf9b915dd87e
+Œcpp:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÆÁÈ¹şÿÿÿÿ8½æÍÌ€3J$a1709d8b-fc1a-4f16-b112-06f90e928bd0
+‡cpp:S112"FDefine and throw a dedicated exception instead of using a generic one.(ê ¬Ÿ8½æÍÌ€3J$f8ea1b64-816f-4e23-8148-698b3985fd1e
+k	cpp:S5817=")This function should be declared "const".(••ú 8¾æÍÌ€3J$ad5bca58-7c44-4957-8174-9a22d719a69e
+w	cpp:S1659W"0Define each identifier in a dedicated statement.(ñ¢ŒÆúÿÿÿÿ8ç¬ ˆ3J$630ae87a-9c80-45ab-9ee6-c906f3ff56ed
+i	cpp:S5827n"'Replace the redundant type with "auto".(ä’ş¡8ÀæÍÌ€3J$bd89b904-6cb0-4013-8cc4-a1f065ee726a
+i	cpp:S5827y"'Replace the redundant type with "auto".(ä’ş¡8ÁæÍÌ€3J$0801507a-3486-48ff-b0ed-50d0975c658c
+£	cpp:S5350y"aMake the type of this variable a pointer-to-const. The current type of "win" is "class Window *".(ä’ş¡8ÁæÍÌ€3J$e629940e-adc1-4761-ada4-714181fb2294
+j	cpp:S5827€"'Replace the redundant type with "auto".(ä’ş¡8ÃæÍÌ€3J$b8e59348-4133-404a-b1f5-705821032bdb
+¤	cpp:S5350€"aMake the type of this variable a pointer-to-const. The current type of "win" is "class Window *".(ä’ş¡8ÃæÍÌ€3J$5c4a439e-1a88-4819-bb77-e5473441f0b5
+j	cpp:S5827‡"'Replace the redundant type with "auto".(ä’ş¡8ÄæÍÌ€3J$b6db24c8-7e53-48b6-ad90-d3a4726b381f
+¤	cpp:S5350‡"aMake the type of this variable a pointer-to-const. The current type of "win" is "class Window *".(ä’ş¡8ÄæÍÌ€3J$2c5d4ea1-79b5-4fd9-bdf7-adefdf43beb1

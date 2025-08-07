@@ -1,0 +1,15 @@
+
+€	cpp:S1768¯"?result of comparison of unsigned expression >= 0 is always true(ÂäïÔøÿÿÿÿJ$efce5b4b-e94e-4f7a-8062-f94096d80636
+i	cpp:S5817<")This function should be declared "const".(’‘ÎªúÿÿÿÿJ$82f005ab-c4d9-42c1-b67c-92ff735700b1
+¹	cpp:S5350>"yMake the type of this variable a reference-to-const. The current type of "mesh" is "class std::unique_ptr<class Mesh> &".(ôÅÇèøÿÿÿÿJ$0d8e9afd-b3fd-48ce-8920-90788f63e4a9
+€cpp:S112J"FDefine and throw a dedicated exception instead of using a generic one.(ªÎæÿJ$ac4a7e09-1010-4ed6-b5b6-067152a7e797
+€cpp:S112b"FDefine and throw a dedicated exception instead of using a generic one.(¶«£J$d64abdd3-4575-40d2-a018-f6e46524bcd9
+cpp:S995p"dMake the type of this parameter a pointer-to-const. The current type of "node" is "struct aiNode *".(’•ıÅJ$7730ea1c-6916-4e46-9550-ec2bc1c46907
+£cpp:S995}"dMake the type of this parameter a pointer-to-const. The current type of "mesh" is "struct aiMesh *".( ğİ¼üÿÿÿÿJ$20c81275-b6c2-40ba-be32-f85de6914a18
+‡	cpp:S6009ğ"FReplace this const reference to "std::string" by a "std::string_view".(›‰ÍçüÿÿÿÿJ$637caf29-0324-4517-b929-7390cf057ee9
+§cpp:S995ğ"gMake the type of this parameter a pointer-to-const. The current type of "mat" is "struct aiMaterial *".(›‰ÍçüÿÿÿÿJ$db40e50e-743e-4568-8990-970b40c53a91
+‚	cpp:S6004˜"AUse the init-statement to declare "data" inside the if statement.(¥°ùÿÿÿÿJ$c5a39435-0657-422d-baa2-142c4d3af28a
+e	cpp:S5817")This function should be declared "const".(Š·‡J$2b9d5edd-7e3c-4392-bc12-96a8ca85cedc
+c	cpp:S5827"'Replace the redundant type with "auto".(Ñ¯ƒ¿J$b16774eb-f114-4a65-8573-d8628dc66b18
+q	cpp:S1659•"0Define each identifier in a dedicated statement.(äû¥ŒÿÿÿÿÿJ$55200331-c5fa-4851-b944-df3742929f9f
+ocpp:S836Ÿ"43rd function call argument is an uninitialized value(Õå«¸J$d2d01eff-4f3a-4e39-a7fe-899e8a2c9f1a

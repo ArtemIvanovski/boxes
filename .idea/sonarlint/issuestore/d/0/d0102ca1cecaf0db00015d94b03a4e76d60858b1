@@ -1,0 +1,17 @@
+
+x	cpp:S5276¶"bimplicit conversion loses integer precision: 'size_t' (aka 'unsigned long long') to 'unsigned int'(¾§Œ
+}	cpp:S5276Á"bimplicit conversion loses integer precision: 'size_t' (aka 'unsigned long long') to 'unsigned int'(„¹­øÿÿÿÿ
+T	cpp:S1238"?Pass expensive to copy object "vertices" by reference to const.(Õú§»
+S	cpp:S1238">Pass expensive to copy object "indices" by reference to const.(Õú§»
+T	cpp:S1238"?Pass expensive to copy object "textures" by reference to const.(û¦²×
+H	cpp:S1238"3Pass large object "material" by reference to const.(û¦²×
+F	cpp:S1121#",Extract the assignment from this expression.(£ì—Âøÿÿÿÿ
+A	cpp:S1121'",Extract the assignment from this expression.(¬ÂÊß
+/	cpp:S49621"Use the "nullptr" literal.(Ÿ–¦¡
+F	cpp:S1121E",Extract the assignment from this expression.(£ì—Âøÿÿÿÿ
+A	cpp:S1121G",Extract the assignment from this expression.(¬ÂÊß
+A	cpp:S1121I",Extract the assignment from this expression.(Í¼É»
+A	cpp:S1121K",Extract the assignment from this expression.(ä¨É
+4	cpp:S4962R"Use the "nullptr" literal.(ÖïÔØúÿÿÿÿ
+4	cpp:S4962z"Use the "nullptr" literal.(Ç²ùÿÿÿÿ
+bcpp:S134½"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Îô‡

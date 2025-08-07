@@ -1,0 +1,10 @@
+
+J	cpp:S1659+"0Define each identifier in a dedicated statement.(’£ëŽþÿÿÿÿ
+E	cpp:S1659"0Define each identifier in a dedicated statement.(¤¡Ó²
+4	cpp:S4962/"Use the "nullptr" literal.(ØžÕ›üÿÿÿÿ
+/	cpp:S49625"Use the "nullptr" literal.(—ßÝë
+C	cpp:S5817}")This function should be declared "const".(²¦…µþÿÿÿÿ
+U	cpp:S1238}";Pass expensive to copy object "type" by reference to const.(²¦…µþÿÿÿÿ
+L	cpp:S5945"2Use "std::string" instead of a C-style char array.(ØŽš†üÿÿÿÿ
+5	cpp:S4962ƒ"Use the "nullptr" literal.( ¯€Õþÿÿÿÿ
+0	cpp:S4962‰"Use the "nullptr" literal.(ëÈþØ

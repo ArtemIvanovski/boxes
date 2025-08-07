@@ -1,0 +1,25 @@
+"D:\CLION\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/CLION/CLion 2024.3.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\TruckLoadingSimulator -B D:\TruckLoadingSimulator\cmake-build-debug
+-- Found source file: src/main.cpp
+-- Found source file: src/core/Application.cpp
+-- Found source file: src/core/Window.cpp
+-- Found source file: src/core/Renderer.cpp
+-- Found source file: src/scene/Scene.cpp
+-- Found source file: src/scene/Transform.cpp
+-- Found source file: src/scene/GameObject.cpp
+-- Found source file: src/scene/BoxManager.cpp
+-- Found source file: src/graphics/Camera.cpp
+-- Found source file: src/graphics/Shader.cpp
+-- Found source file: src/graphics/Model.cpp
+-- Found source file: src/graphics/Mesh.cpp
+-- Found source file: src/graphics/Material.cpp
+-- Found source file: src/graphics/Primitives.cpp
+-- Project configured successfully!
+-- Vcpkg toolchain: C:/Users/Pasha/vcpkg/scripts/buildsystems/vcpkg.cmake
+-- Libraries found:
+--   - GLFW: 3.4.0
+--   - GLAD: Found
+--   - Assimp: 6.0.2
+--   - GLM: 1.0.1
+-- Configuring done (1.6s)
+-- Generating done (0.2s)
+-- Build files have been written to: D:/TruckLoadingSimulator/cmake-build-debug
