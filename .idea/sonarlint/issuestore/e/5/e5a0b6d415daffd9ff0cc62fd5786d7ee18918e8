@@ -1,13 +1,11 @@
 
-v	cpp:S1135\"4Complete the task associated to this "TODO" comment.(Âÿ…÷8ÇÃ« ˆ3J$de7cfaed-a0ab-4768-9a37-20dde79405a5
-o	cpp:S1117“",declaration shadows a field of 'Application'(ï…È±8ëŞ‰Îÿ2J$3a5ad9ef-4aee-4a7f-9f27-44c6d4ed654e
-{	cpp:S1181""9Catch a more specific exception instead of a generic one.(¿Î†Ş8ÅÆ« ˆ3J$b50dc1f5-e277-4e28-b6dd-4f17271755d5
-Ô	cpp:S1188A"‘This lambda has 21 lines, which is greater than the 20 lines authorized. Split it into several lambdas or functions, or make it a named function.(–Íÿ‡8ÌÆ« ˆ3J$c6371e6e-1a96-40ea-b089-4b6bbecb8b90
-›	cpp:S1172b"YRemove the unused parameter "xoffset", make it unnamed, or declare it "[[maybe_unused]]".(“‘Õ8˜ß‰Îÿ2J$9029bd56-5a69-43f8-8793-04d7796cd864
-¡	cpp:S1172i"ZRemove the unused parameter "scancode", make it unnamed, or declare it "[[maybe_unused]]".(¬Äùÿÿÿÿ8ß‰Îÿ2J$c66e2ef2-8ec7-4202-8ce7-8a76b64707fc
-	cpp:S1172i"VRemove the unused parameter "mods", make it unnamed, or declare it "[[maybe_unused]]".(¬Äùÿÿÿÿ8ß‰Îÿ2J$bb7f8059-a077-4e0e-844d-5167ddadf7c4
-p	cpp:S3562k".Add a "default" case to this switch statement.(°Ó÷8¢ß‰Îÿ2J$b1cf4947-6e64-42ca-8065-41646ab1336a
-j	cpp:S1481|"(Remove the unused lambda capture "this".(ì §8¶ß‰Îÿ2J$a840e530-7b6b-4f47-8888-24344dcf0ae9
-™	cpp:S1172|"WRemove the unused parameter "width", make it unnamed, or declare it "[[maybe_unused]]".(ì §8¶ß‰Îÿ2J$44fba4eb-8703-4ac1-a55c-69a6c54ae3f0
-š	cpp:S1172|"XRemove the unused parameter "height", make it unnamed, or declare it "[[maybe_unused]]".(ì §8¶ß‰Îÿ2J$eb0bc900-94ab-4d8d-903d-411e2b0f4910
-j	cpp:S5827„"'Replace the redundant type with "auto".(‚ŸÎñ8¶ß‰Îÿ2J$c4faa605-573c-48a3-bb17-837dbf8cd29f
+v	cpp:S1135\"4Complete the task associated to this "TODO" comment.(Âÿ…÷8ÇÃ« ˆ3J$5e0e0bc6-ea3b-4f3d-9c41-f37e7681699f
+n	cpp:S1117~",declaration shadows a field of 'Application'(ÔƒÁü8·Ï»¢ˆ3J$79345a99-5f95-43ee-ac5f-f929bfde1f86
+{	cpp:S1181""9Catch a more specific exception instead of a generic one.(¿Î†Ş8ÅÆ« ˆ3J$b9b1e695-fe17-4eb7-ac19-dd4ca22ef4f3
+›	cpp:S3776?"TRefactor this function to reduce its Cognitive Complexity from 32 to the 25 allowed.(¨ŞèËùÿÿÿÿ8áÏ»¢ˆ3J$ce3bc14c-6f77-43ab-b280-8bea5e143c99
+Ô	cpp:S1188A"‘This lambda has 21 lines, which is greater than the 20 lines authorized. Split it into several lambdas or functions, or make it a named function.(–Íÿ‡8ÌÆ« ˆ3J$f4b2db19-e563-4362-84c2-12509a79272f
+p	cpp:S3562n".Add a "default" case to this switch statement.(°Ó÷8¢ß‰Îÿ2J$eeacb985-05ee-47ff-b2b8-035b984f6e91
+i	cpp:S5827"'Replace the redundant type with "auto".(çŞÆ8¸¨ì¢ˆ3J$361f0482-820f-490c-9444-e0e3b14c5cad
+q	cpp:S3562„".Add a "default" case to this switch statement.(°Ó÷8¹¨ì¢ˆ3J$44b1a5d5-aa80-4fc0-bbec-fba6189a77a8
+k	cpp:S1481—"(Remove the unused lambda capture "this".(ì §8º¨ì¢ˆ3J$ca14cadc-009b-4290-9119-b6a17bb28468
+j	cpp:S5827¡"'Replace the redundant type with "auto".(‚ŸÎñ8¶ß‰Îÿ2J$383d8368-e4df-4c8e-a633-93b368fa997a

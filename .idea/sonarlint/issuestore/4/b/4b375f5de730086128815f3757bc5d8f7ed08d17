@@ -1,4 +1,6 @@
 
-k	cpp:S5817T")This function should be declared "const".(ÔŸ»8ºÍÌ€3J$eb5d4cc1-b4c6-4dd5-ad16-7ca5af2a8f6a
-–	cpp:S1172T"[Remove the unused parameter "deltaTime", make it unnamed, or declare it "[[maybe_unused]]".(ÔŸ»J$1373d600-9ea4-4df2-92e0-5fbdb859ddf7
-g	cpp:S5827Z"'Replace the redundant type with "auto".(Óä÷ÿşÿÿÿÿJ$7b835f3f-1b90-43d4-a3d7-c22579829e5e
+~	cpp:S5276™"<implicit conversion from 'int' to 'float' may lose precision(§¢—8¯óÈ¢ˆ3J$83f66f2c-7bf5-498d-ba22-d72e8d21a404
+„	cpp:S5276¥"<implicit conversion from 'int' to 'float' may lose precision(•È°ûÿÿÿÿ8ÚØó¢ˆ3J$5052fbd7-700d-4356-8dbd-0fd717b6e1bd
+n	cpp:S5827T"'Replace the redundant type with "auto".(Óä÷ÿşÿÿÿÿ8ä–Ã¢ˆ3J$23e755cf-8c00-4c88-9587-8b07219cda2f
+	cpp:S6004±"HUse the init-statement to declare "insideTruck" inside the if statement.(Ü¬®úÿÿÿÿ8‹Ùó¢ˆ3J$a11670fd-1712-4f11-8636-167583c64012
+cpp:S134¤"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(§îó8ÜóÈ¢ˆ3J$31f86f9b-66f5-4e03-bfbd-8b40b1880d03

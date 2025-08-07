@@ -96,6 +96,7 @@ void Application::setupCallbacks() {
 
     // Scroll callback
     window->setScrollCallback([this](double xoffset, double yoffset) {
+        (void)xoffset; // Suppress unused parameter warning
         if (cameraControlEnabled) {
             camera->processMouseScroll(static_cast<float>(yoffset));
         }
@@ -103,6 +104,8 @@ void Application::setupCallbacks() {
 
     // Keyboard callback
     window->setKeyCallback([this](int key, int scancode, int action, int mods) {
+        (void)scancode; // Suppress unused parameter warning
+        (void)mods; // Suppress unused parameter warning
         if (action == GLFW_PRESS) {
             switch (key) {
                 case GLFW_KEY_ESCAPE:
@@ -120,8 +123,34 @@ void Application::setupCallbacks() {
         }
     });
 
+    glfwSetKeyCallback(window->getGLFWWindow(), [](GLFWwindow* window, int key, int scancode, int action, int mods) {
+    (void)scancode; // Suppress unused parameter warning
+    (void)mods; // Suppress unused parameter warning
+    Application* app = static_cast<Application*>(glfwGetWindowUserPointer(window));
+
+    if (action == GLFW_PRESS) {
+        switch (key) {
+            case GLFW_KEY_TAB:
+                if (app->scene && app->scene->getBoxManager()) {
+                    app->scene->getBoxManager()->toggleBoxPanel();
+                }
+                break;
+            case GLFW_KEY_ESCAPE:
+                glfwSetWindowShouldClose(window, true);
+                break;
+        }
+    }
+
+    // Передаем клавиши BoxManager
+    if (app->scene && app->scene->getBoxManager()) {
+        app->scene->getBoxManager()->handleKeyInput(key, action);
+    }
+});
+
     // Resize callback
     window->setResizeCallback([this](int width, int height) {
+        (void)width; // Suppress unused parameter warning
+        (void)height; // Suppress unused parameter warning
         // Handle window resize
     });
 }
@@ -144,9 +173,9 @@ void Application::run() {
     }
 }
 
-void Application::update(float deltaTime) {
+void Application::update(float deltaTimeParam) {
     // Update scene
-    scene->update(deltaTime);
+    scene->update(deltaTimeParam);
 
     // Check for exit
     if (window->isKeyPressed(GLFW_KEY_ESCAPE)) {

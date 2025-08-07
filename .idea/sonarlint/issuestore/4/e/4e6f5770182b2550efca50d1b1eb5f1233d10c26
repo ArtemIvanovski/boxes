@@ -1,18 +1,26 @@
 
-¨	cpp:S3230"hDo not assign data members in a constructor. Initialize member "truckPresets" in an initialization list.(ª–¸ĞşÿÿÿÿJ$0042e4ec-189e-4604-9706-892eb28734e0
-	cpp:S60042"AUse the init-statement to declare "font" inside the if statement.(Ûß×„ÿÿÿÿÿJ$ce1a149a-298c-49cc-b7c9-0892234c1657
-p	cpp:S5817*")This function should be declared "const".( Éúùÿÿÿÿ8“ª ˆ3J$579232cb-826a-4a23-83da-289f717ddcdc
-	cpp:S53501"cMake the type of this variable a pointer-to-const. The current type of "font" is "struct ImFont *".(…‰½¹J$f742d890-0c81-445b-833f-822f78c4d9ae
-p	cpp:S5817<")This function should be declared "const".(’¨ãËúÿÿÿÿ8„“ª ˆ3J$c3b4abb2-8849-4dc7-809b-1e208d64eea7
-k	cpp:S5817A")This function should be declared "const".(Äğ €8…“ª ˆ3J$6f0d3d1a-60ef-4289-9fcb-61e6ffeb57b9
-‰	cpp:S6004`"GUse the init-statement to declare "boxManager" inside the if statement.(™‘åÄ8ˆ“ª ˆ3J$bbd0a9b2-1f01-4ad2-a514-a05ed6a1d887
-®cpp:S859_"hconst_cast removing const qualification from the type of a reference may lead to an undefined behaviour.(‡¨çüÿÿÿÿ8‰“ª ˆ3J$05f6e14e-3316-4d8d-a2fa-7966a24a8be0
-‹	cpp:S6004¯"HUse the init-statement to declare "tentChanged" inside the if statement.(ô¹ÿó8‹“ª ˆ3J$bc9b87bc-e7dc-4e7e-ba89-f50e3849a947
-	cpp:S3776h"TRefactor this function to reduce its Cognitive Complexity from 44 to the 25 allowed.(äîàøJ$c16a411e-b1a2-4399-9986-5778c2266bb9
-ˆcpp:S134"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ƒÙÿÇJ$c90696e2-939b-4154-b64d-cd3f754346b3
-cpp:S134±"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ÄàŒ‹8“ª ˆ3J$8f3350f6-29fd-4d22-8c8e-702b96cf0e7c
-˜	cpp:S1172½"WRemove the unused parameter "scene", make it unnamed, or declare it "[[maybe_unused]]".(ŒˆËÛùÿÿÿÿJ$19616df5-bb87-4a08-83b8-a1da65f3bc24
-l	cpp:S5817Ê")This function should be declared "const".(îÛÓ8—“ª ˆ3J$4303cb31-9a47-48e8-ae45-73592299015d
-€	cpp:S5945Ö"=Use "std::array" or "std::vector" instead of a C-style array.(ô¶÷ä8š“ª ˆ3J$b0cea824-0b43-486d-92fa-9f592277bfd0
-q	cpp:S5817ğ")This function should be declared "const".(¤«º“ÿÿÿÿÿ8œ“ª ˆ3J$3daca966-2689-4808-8f87-b192f8c2b035
-q	cpp:S5817ÿ")This function should be declared "const".(ì³Æıÿÿÿÿ8“ª ˆ3J$9ef9928b-c8b7-4f72-98cc-00635448935f
+¯	cpp:S3230"hDo not assign data members in a constructor. Initialize member "truckPresets" in an initialization list.(ª–¸Ğşÿÿÿÿ8µ©¥¢ˆ3J$70ccebd5-57c3-4e0c-87cf-3a72c749a5dd
+ˆ	cpp:S60043"AUse the init-statement to declare "font" inside the if statement.(Ûß×„ÿÿÿÿÿ8¼©¥¢ˆ3J$6cd2f8f0-c3c8-443b-9173-02fd159b885c
+p	cpp:S5817*")This function should be declared "const".( Éúùÿÿÿÿ8¼©¥¢ˆ3J$240864bf-7da4-4a4c-9c3e-595ff36c1d43
+¥	cpp:S53501"cMake the type of this variable a pointer-to-const. The current type of "font" is "struct ImFont *".(Û¢àã8½©¥¢ˆ3J$f3bbb256-072b-485a-b98c-5b201670deaa
+p	cpp:S5817=")This function should be declared "const".(’¨ãËúÿÿÿÿ8¿©¥¢ˆ3J$b289ed06-46c7-4f21-9b19-c66b4ca0a201
+k	cpp:S5817B")This function should be declared "const".(Äğ €8Á©¥¢ˆ3J$2c88ea38-1505-4899-90b3-2e4a4ce5f9ed
+‰	cpp:S6004a"GUse the init-statement to declare "boxManager" inside the if statement.(™‘åÄ8Ä©¥¢ˆ3J$4ba9d11f-5274-4d20-8607-9d23100bc79f
+®cpp:S859`"hconst_cast removing const qualification from the type of a reference may lead to an undefined behaviour.(‡¨çüÿÿÿÿ8Ä©¥¢ˆ3J$af078dfc-5cf6-4884-8605-a347dc5fdb3f
+Š	cpp:S6004”"GUse the init-statement to declare "boxManager" inside the if statement.(™‘åÄ8ø˜¬¢ˆ3J$00f135d0-a7d7-4d46-bbcf-a62a22707403
+‹	cpp:S6004»"HUse the init-statement to declare "tentChanged" inside the if statement.(ô¹ÿó8Æ©¥¢ˆ3J$5cc6e739-33fd-4c8c-a239-46cb47780f9b
+–	cpp:S3776i"TRefactor this function to reduce its Cognitive Complexity from 53 to the 25 allowed.(äîàø8Æ©¥¢ˆ3J$4ea4e9da-9e18-41e5-bda3-b92ebcd3282e
+cpp:S134‚"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ƒÙÿÇ8Ç©¥¢ˆ3J$a6cdc2a0-1671-4ffa-a467-685f7bc90ca7
+cpp:S134–"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ª–ÆÔ8Ç©¥¢ˆ3J$8cec02b2-acd1-4ad1-968a-87977e8e6fbc
+cpp:S134½"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ÄàŒ‹8ú˜¬¢ˆ3J$0d82bc75-4c5b-4de4-a081-da66ccb9a3ac
+c	cpp:S1905“"Remove this redundant cast.(ˆË¾ºşÿÿÿÿ8Õ©¥¢ˆ3J$fcba6929-27a1-44bc-9d41-6de669ccd22c
+	cpp:S6004ä"HUse the init-statement to declare "presetNames" inside the if statement.(‡ÁÉÂùÿÿÿÿ8Ğ©¥¢ˆ3J$e73046c4-a6ed-426f-ae4d-40e01adba911
+ˆ	cpp:S6004ı"EUse the init-statement to declare "tentOpen" inside the if statement.(ü¤üñ8Ñ©¥¢ˆ3J$e2f15d48-22dc-407c-a5a0-6e970aeef00c
+¦	cpp:S5350Ë"dMake the type of this variable a reference-to-const. The current type of "io" is "struct ImGuiIO &".(½×¢A8Ñ©¥¢ˆ3J$b107ba0f-3793-47f0-b041-c2665bd823f6
+€	cpp:S5945Û"=Use "std::array" or "std::vector" instead of a C-style array.(àÄ°Î8Ó©¥¢ˆ3J$61d36a8f-ecc1-4b0a-9ae7-f64dab6aa489
+c	cpp:S1905€"Remove this redundant cast.(¹†Âôøÿÿÿÿ8‰™¬¢ˆ3J$8f0ed7f5-bf65-41fa-809a-2c95f9d9d341
+l	cpp:S5817›")This function should be declared "const".(îÛÓ8Ö©¥¢ˆ3J$80775f3b-c7d1-46d2-ab20-4972f4f25d0f
+¦	cpp:S5350œ"dMake the type of this variable a reference-to-const. The current type of "io" is "struct ImGuiIO &".(½×¢A8×©¥¢ˆ3J$0c699e91-b5a5-4144-b6f2-1acda1e76a18
+€	cpp:S5945·"=Use "std::array" or "std::vector" instead of a C-style array.(ô¶÷ä8Ù©¥¢ˆ3J$73690819-7946-466d-9ec0-fb72d7e9a0a1
+q	cpp:S5817Í")This function should be declared "const".(¤«º“ÿÿÿÿÿ8Ü©¥¢ˆ3J$cc8093de-936e-4ff6-ba7e-1a3eee4b3209
+q	cpp:S5817Ü")This function should be declared "const".(ì³Æıÿÿÿÿ8Ş©¥¢ˆ3J$5dc8a7da-b988-4c1a-bcb3-7850a616b69e

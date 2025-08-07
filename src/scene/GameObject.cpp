@@ -12,7 +12,8 @@ Model* GameObject::getModel() const {
     return model.get();
 }
 
-void GameObject::update(float deltaTime) {
+void GameObject::update(float deltaTimeParam) {
+    (void)deltaTimeParam; // Suppress unused parameter warning
     if (!active) return;
 
     // Update game object logic here

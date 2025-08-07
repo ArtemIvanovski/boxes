@@ -29,8 +29,11 @@ void BoxManager::addBox(const std::string& name, float width, float height, floa
     float w = width / 100.0f;
     float h = height / 100.0f;
     float d = depth / 100.0f;
-    
+
     boxMeshes.push_back(Primitives::createBox(w, h, d, boxMaterial));
+    boxes.back().markingText = name + "\n" + std::to_string(static_cast<int>(width)) + "x" +
+                          std::to_string(static_cast<int>(height)) + "x" +
+                          std::to_string(static_cast<int>(depth));
 }
 
 void BoxManager::removeBox(int index) {
@@ -148,44 +151,60 @@ void BoxManager::renderBoxes(const Shader& shader) {
                 boxMeshes[i]->draw(shader);
             }
         }
+        if (boxes[i].hasMarkings) {
+            // Здесь можно использовать ImGui для отображения текста в 3D позиции
+            // или создать текстурированные плоскости с текстом
+        }
     }
 }
 
 void BoxManager::renderBoxPanel() {
     if (!showBoxPanel) return;
     
-    // Фиксированная панель слева (как в BabylonJS)
-    ImGui::SetNextWindowPos(ImVec2(10, 10), ImGuiCond_FirstUseEver);
-    ImGui::SetNextWindowSize(ImVec2(300, 600), ImGuiCond_FirstUseEver);
-    
-    ImGui::Begin("Управление коробками", &showBoxPanel, 
-                 ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize);
-    
-    // Панель добавления новой коробки
-    ImGui::Text("Добавить новую коробку:");
+    ImGuiIO& io = ImGui::GetIO();
+
+    // Sidebar справа (как в HTML)
+    ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x - 320, 10), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(310, io.DisplaySize.y - 120), ImGuiCond_Always);
+
+    ImGui::Begin("##BoxSidebar", &showBoxPanel,
+                 ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize |
+                 ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBringToFrontOnFocus);
+
+    ImGui::Text("Управление коробками");
     ImGui::Separator();
-    
+
+    // Панель добавления новой коробки
+    ImGui::Text("Добавить коробку:");
+
     char nameBuffer[256];
     strcpy_s(nameBuffer, newBoxName.c_str());
     if (ImGui::InputText("Название", nameBuffer, sizeof(nameBuffer))) {
         newBoxName = nameBuffer;
     }
-    ImGui::InputFloat("Ширина (см)", &newBoxWidth, 1.0f, 10.0f, "%.0f");
-    ImGui::InputFloat("Высота (см)", &newBoxHeight, 1.0f, 10.0f, "%.0f");
-    ImGui::InputFloat("Глубина (см)", &newBoxDepth, 1.0f, 10.0f, "%.0f");
-    ImGui::InputFloat("Вес (кг)", &newBoxWeight, 0.1f, 1.0f, "%.1f");
-    ImGui::InputInt("Количество", &newBoxQuantity, 1, 10);
-    
-    // Color picker (как в BabylonJS)
+
+    ImGui::PushItemWidth(70);
+    ImGui::InputFloat("Ширина", &newBoxWidth, 1.0f, 10.0f, "%.0f");
+    ImGui::SameLine();
+    ImGui::InputFloat("Высота", &newBoxHeight, 1.0f, 10.0f, "%.0f");
+    ImGui::SameLine();
+    ImGui::InputFloat("Глубина", &newBoxDepth, 1.0f, 10.0f, "%.0f");
+    ImGui::PopItemWidth();
+
+    ImGui::PushItemWidth(70);
+    ImGui::InputFloat("Вес", &newBoxWeight, 0.1f, 1.0f, "%.1f");
+    ImGui::SameLine();
+    ImGui::InputInt("Кол-во", &newBoxQuantity, 1, 10);
+    ImGui::PopItemWidth();
+
     float color[3] = {newBoxColor.x, newBoxColor.y, newBoxColor.z};
     if (ImGui::ColorEdit3("Цвет", color)) {
         newBoxColor = glm::vec3(color[0], color[1], color[2]);
     }
-    
-    if (ImGui::Button("Добавить коробку")) {
+
+    if (ImGui::Button("Добавить", ImVec2(-1, 30))) {
         addBox(newBoxName, newBoxWidth, newBoxHeight, newBoxDepth, newBoxWeight, newBoxQuantity, newBoxColor);
-        
-        // Reset form
+
         newBoxName = "PO#" + std::to_string(boxes.size() + 2457);
         newBoxWidth = 100.0f;
         newBoxHeight = 100.0f;
@@ -194,75 +213,85 @@ void BoxManager::renderBoxPanel() {
         newBoxQuantity = 1;
         newBoxColor = glm::vec3(0.7f, 0.7f, 0.7f);
     }
-    
+
     ImGui::Separator();
-    
-    // Список существующих коробок (как в BabylonJS)
-    ImGui::Text("Существующие коробки:");
-    ImGui::Text("(Перетащите коробки на сцену левой кнопкой мыши)");
-    ImGui::BeginChild("BoxList", ImVec2(0, 200), true);
-    
+
+    // Список коробок с 2D превью
+    ImGui::Text("Коробки (%zu):", boxes.size());
+    ImGui::BeginChild("BoxGrid", ImVec2(0, -80), true);
+
+    ImDrawList* drawList = ImGui::GetWindowDrawList();
+    ImVec2 canvasPos = ImGui::GetCursorScreenPos();
+    float cellSize = 60.0f;
+    int columns = 4;
+
     for (size_t i = 0; i < boxes.size(); ++i) {
         const auto& box = boxes[i];
-        
-        // Отображаем как прямоугольники с цветом (как в BabylonJS)
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(box.color.x, box.color.y, box.color.z, 1.0f));
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(box.color.x * 1.2f, box.color.y * 1.2f, box.color.z * 1.2f, 1.0f));
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(box.color.x * 0.8f, box.color.y * 0.8f, box.color.z * 0.8f, 1.0f));
-        
-        std::string label = box.name + " (" + std::to_string(static_cast<int>(box.width)) + "x" + 
-                           std::to_string(static_cast<int>(box.height)) + "x" + 
-                           std::to_string(static_cast<int>(box.depth)) + " см)";
-        
-        if (ImGui::Button(label.c_str(), ImVec2(ImGui::GetWindowWidth() - 20, 30))) {
-            selectBox(static_cast<int>(i));
-        }
-        
-        ImGui::PopStyleColor(3);
-        
-        // Tooltip с детальной информацией (как в BabylonJS)
-        if (ImGui::IsItemHovered()) {
+
+        int row = i / columns;
+        int col = i % columns;
+
+        ImVec2 cellPos = ImVec2(canvasPos.x + col * (cellSize + 5), canvasPos.y + row * (cellSize + 5));
+        ImVec2 cellEnd = ImVec2(cellPos.x + cellSize, cellPos.y + cellSize);
+
+        // Рисуем 2D представление коробки
+        ImU32 boxColor = IM_COL32(box.color.x * 255, box.color.y * 255, box.color.z * 255, 255);
+        ImU32 borderColor = (selectedBoxIndex == i) ? IM_COL32(255, 255, 0, 255) : IM_COL32(0, 0, 0, 255);
+
+        drawList->AddRectFilled(cellPos, cellEnd, boxColor);
+        drawList->AddRect(cellPos, cellEnd, borderColor, 0.0f, 0, 2.0f);
+
+        // Текст на коробке
+        std::string label = std::to_string(static_cast<int>(box.width)) + "x" +
+                           std::to_string(static_cast<int>(box.height));
+        ImVec2 textSize = ImGui::CalcTextSize(label.c_str());
+        ImVec2 textPos = ImVec2(cellPos.x + (cellSize - textSize.x) * 0.5f,
+                               cellPos.y + (cellSize - textSize.y) * 0.5f);
+        drawList->AddText(textPos, IM_COL32(0, 0, 0, 255), label.c_str());
+
+        // Обработка кликов
+        if (ImGui::IsMouseHoveringRect(cellPos, cellEnd)) {
+            if (ImGui::IsMouseClicked(0)) {
+                selectBox(static_cast<int>(i));
+            }
+
+            // Tooltip
             ImGui::BeginTooltip();
             ImGui::Text("Название: %s", box.name.c_str());
-            ImGui::Text("Размеры: %.0f x %.0f x %.0f см", box.width, box.height, box.depth);
+            ImGui::Text("Размеры: %.0fx%.0fx%.0f см", box.width, box.height, box.depth);
             ImGui::Text("Вес: %.1f кг", box.weight);
-            ImGui::Text("Количество: %d", box.quantity);
             ImGui::Text("На сцене: %s", box.isOnScene ? "Да" : "Нет");
             ImGui::EndTooltip();
         }
     }
-    
+
+    ImGui::SetCursorPosY(ImGui::GetCursorPosY() + ((boxes.size() / columns) + 1) * (cellSize + 5));
     ImGui::EndChild();
-    
+
     // Кнопки управления
     if (selectedBoxIndex >= 0) {
-        ImGui::Separator();
-        
-        if (ImGui::Button("Удалить выбранную")) {
+        if (ImGui::Button("Удалить", ImVec2(90, 25))) {
             removeBox(selectedBoxIndex);
         }
-        
         ImGui::SameLine();
-        
-        if (ImGui::Button("Очистить все")) {
+        if (ImGui::Button("Очистить все", ImVec2(90, 25))) {
             clearBoxes();
         }
-        
         ImGui::SameLine();
-        
         auto* selected = getSelectedBox();
         if (selected && !selected->isOnScene) {
-            if (ImGui::Button("Разместить на сцене")) {
+            if (ImGui::Button("На сцену", ImVec2(90, 25))) {
                 selected->isOnScene = true;
-                selected->position = glm::vec3(0.0f, selected->height / 200.0f, 0.0f); // Над полом
+                selected->position = glm::vec3(0.0f, selected->height / 200.0f, 0.0f);
             }
         }
     }
-    
+
     ImGui::End();
 }
 
 void BoxManager::handleMouseInput(double xpos, double ypos, bool leftPressed, bool rightPressed) {
+    (void)rightPressed; // Suppress unused parameter warning
     // Handle box dragging from UI to scene
     if (leftPressed && selectedBoxIndex >= 0 && !draggingFromUI) {
         startBoxDrag(selectedBoxIndex);
@@ -291,9 +320,23 @@ void BoxManager::handleKeyInput(int key, int action) {
                     auto* box = getSelectedBox();
                     if (box) {
                         box->rotation.y += glm::radians(90.0f);
+                        if (box->rotation.y >= glm::radians(360.0f)) {
+                            box->rotation.y = 0.0f;
+                        }
                     }
                 }
-                break;
+            break;
+            case GLFW_KEY_T:
+                if (selectedBoxIndex >= 0) {
+                    auto* box = getSelectedBox();
+                    if (box) {
+                        box->rotation.x += glm::radians(90.0f);
+                        if (box->rotation.x >= glm::radians(360.0f)) {
+                            box->rotation.x = 0.0f;
+                        }
+                    }
+                }
+            break;
         }
     }
 }

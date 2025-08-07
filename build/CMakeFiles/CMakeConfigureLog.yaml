@@ -38,7 +38,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -78,6 +77,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "message-v1"
@@ -97,7 +97,7 @@ events:
       Microsoft (R) Build Engine версии 16.11.2+f32259642 для .NET Framework
       (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
       
-      Сборка начата 07.08.2025 13:10:46.
+      Сборка начата 07.08.2025 15:02:48.
       Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\4.1.0-rc1\\CompilerIdC\\CompilerIdC.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
         Создание каталога "Debug\\".
@@ -123,7 +123,7 @@ events:
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:01.21
+      Прошло времени 00:00:01.18
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -156,7 +156,6 @@ events:
       - "link"
     candidate_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -196,8 +195,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -237,8 +236,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -278,13 +277,11 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
     searched_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/link"
@@ -402,12 +399,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/link"
@@ -525,6 +522,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
     found: "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
     search_context:
@@ -535,7 +535,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -575,6 +574,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "find-v1"
@@ -599,7 +599,6 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -639,8 +638,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -680,8 +679,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -721,13 +720,11 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
     searched_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lld-link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lld-link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lld-link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lld-link"
@@ -845,12 +842,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lld-link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lld-link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lld-link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lld-link"
@@ -968,12 +965,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
-      - "C:/Program Files/Google/Chrome/Application/lld-link.com"
-      - "C:/Program Files/Google/Chrome/Application/lld-link.exe"
-      - "C:/Program Files/Google/Chrome/Application/lld-link"
       - "C:/ProgramData/Oracle/Java/javapath/lld-link.com"
       - "C:/ProgramData/Oracle/Java/javapath/lld-link.exe"
       - "C:/ProgramData/Oracle/Java/javapath/lld-link"
@@ -1091,6 +1088,9 @@ events:
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.com"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.exe"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
     found: false
     search_context:
       CMAKE_PROGRAM_PATH:
@@ -1100,7 +1100,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -1140,6 +1139,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "find-v1"
@@ -1162,7 +1162,6 @@ events:
       - "link"
     candidate_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -1202,8 +1201,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -1243,8 +1242,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -1284,13 +1283,11 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
     searched_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/link"
@@ -1408,12 +1405,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/link"
@@ -1531,6 +1528,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/link"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
     found: "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
     search_context:
@@ -1541,7 +1541,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -1581,6 +1580,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "find-v1"
@@ -1603,7 +1603,6 @@ events:
       - "mt"
     candidate_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -1643,8 +1642,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -1684,8 +1683,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -1725,13 +1724,11 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
     searched_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/mt.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/mt.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/mt"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/mt.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/mt.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/mt"
@@ -1849,12 +1846,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/mt.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/mt.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/mt"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/mt.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/mt.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/mt"
@@ -1972,12 +1969,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.com"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.exe"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt"
-      - "C:/Program Files/Google/Chrome/Application/mt.com"
-      - "C:/Program Files/Google/Chrome/Application/mt.exe"
-      - "C:/Program Files/Google/Chrome/Application/mt"
       - "C:/ProgramData/Oracle/Java/javapath/mt.com"
       - "C:/ProgramData/Oracle/Java/javapath/mt.exe"
       - "C:/ProgramData/Oracle/Java/javapath/mt"
@@ -2095,6 +2092,9 @@ events:
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt.com"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt.exe"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/mt"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt.com"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt.exe"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/mt"
     found: false
     search_context:
       CMAKE_PROGRAM_PATH:
@@ -2104,7 +2104,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -2144,6 +2143,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "find-v1"
@@ -2166,7 +2166,6 @@ events:
       - "lib"
     candidate_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -2206,8 +2205,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -2247,8 +2246,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -2288,13 +2287,11 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
     searched_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lib.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lib.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lib"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lib.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lib.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lib"
@@ -2412,12 +2409,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lib.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lib.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lib"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lib.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lib.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lib"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lib.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lib.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lib"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lib.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lib.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lib"
@@ -2535,6 +2532,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lib.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lib.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lib"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lib.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lib.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lib"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.com"
     found: "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe"
     search_context:
@@ -2545,7 +2545,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -2585,6 +2584,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "find-v1"
@@ -2616,7 +2616,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -2656,6 +2655,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "message-v1"
@@ -2675,7 +2675,7 @@ events:
       Microsoft (R) Build Engine версии 16.11.2+f32259642 для .NET Framework
       (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
       
-      Сборка начата 07.08.2025 13:10:47.
+      Сборка начата 07.08.2025 15:02:50.
       Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\4.1.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
         Создание каталога "Debug\\".
@@ -2701,7 +2701,7 @@ events:
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:00.85
+      Прошло времени 00:00:00.94
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -2734,7 +2734,6 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -2774,8 +2773,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -2815,8 +2814,8 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -2856,13 +2855,11 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
     searched_directories:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lld-link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lld-link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/lld-link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/lld-link"
@@ -2980,12 +2977,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lld-link.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lld-link.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/lld-link"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/lld-link"
@@ -3103,12 +3100,12 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
       - "D:/Microsoft Visual Studio/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
-      - "C:/Program Files/Google/Chrome/Application/lld-link.com"
-      - "C:/Program Files/Google/Chrome/Application/lld-link.exe"
-      - "C:/Program Files/Google/Chrome/Application/lld-link"
       - "C:/ProgramData/Oracle/Java/javapath/lld-link.com"
       - "C:/ProgramData/Oracle/Java/javapath/lld-link.exe"
       - "C:/ProgramData/Oracle/Java/javapath/lld-link"
@@ -3226,6 +3223,9 @@ events:
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.com"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link.exe"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/lld-link"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
     found: false
     search_context:
       CMAKE_PROGRAM_PATH:
@@ -3235,7 +3235,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -3275,6 +3274,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_FIND_ROOT_PATH: "C:/Users/Pasha/vcpkg/installed/x64-windows;C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
   -
     kind: "find-v1"
@@ -3307,7 +3307,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -3347,6 +3346,7 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/sbin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/"
@@ -3367,7 +3367,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -3407,6 +3406,7 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/sbin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/"
@@ -3427,7 +3427,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -3467,6 +3466,7 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -3504,9 +3504,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/rc.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/rc.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/rc"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/rc"
@@ -3624,6 +3621,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/rc"
@@ -3684,9 +3684,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/rc.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/rc.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/rc"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/rc"
@@ -3804,6 +3801,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/rc"
@@ -3864,9 +3864,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/rc"
-      - "C:/Program Files/Google/Chrome/Application/rc.com"
-      - "C:/Program Files/Google/Chrome/Application/rc.exe"
-      - "C:/Program Files/Google/Chrome/Application/rc"
       - "C:/ProgramData/Oracle/Java/javapath/rc.com"
       - "C:/ProgramData/Oracle/Java/javapath/rc.exe"
       - "C:/ProgramData/Oracle/Java/javapath/rc"
@@ -3984,6 +3981,9 @@ events:
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc.com"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc.exe"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/rc"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc.com"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc.exe"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/rc"
       - "C:/Program Files/bin/rc.com"
       - "C:/Program Files/bin/rc.exe"
       - "C:/Program Files/bin/rc"
@@ -4029,7 +4029,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -4069,6 +4068,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TruckLoadingSimulator"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -4085,8 +4085,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l8ylqk"
-      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l8ylqk"
+      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-43s5rs"
+      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-43s5rs"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4099,39 +4099,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l8ylqk'
+        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-43s5rs'
         
-        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_3fb1f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_83544.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine версии 16.11.2+f32259642 для .NET Framework
         (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
         
-        Сборка начата 07.08.2025 13:10:49.
-        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l8ylqk\\cmTC_3fb1f.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Сборка начата 07.08.2025 15:02:51.
+        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-43s5rs\\cmTC_83544.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_3fb1f.dir\\Debug\\".
-          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l8ylqk\\Debug\\".
-          Создание каталога "cmTC_3fb1f.dir\\Debug\\cmTC_3fb1f.tlog\\".
+          Создание каталога "cmTC_83544.dir\\Debug\\".
+          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-43s5rs\\Debug\\".
+          Создание каталога "cmTC_83544.dir\\Debug\\cmTC_83544.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_3fb1f.dir\\Debug\\cmTC_3fb1f.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_83544.dir\\Debug\\cmTC_83544.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_3fb1f.dir\\Debug\\\\" /Fd"cmTC_3fb1f.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_83544.dir\\Debug\\\\" /Fd"cmTC_83544.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.29.30159 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
           CMakeCCompilerABI.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_3fb1f.dir\\Debug\\\\" /Fd"cmTC_3fb1f.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_83544.dir\\Debug\\\\" /Fd"cmTC_83544.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
         Link:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l8ylqk\\Debug\\cmTC_3fb1f.exe" /INCREMENTAL /ILK:"cmTC_3fb1f.dir\\Debug\\cmTC_3fb1f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l8ylqk/Debug/cmTC_3fb1f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l8ylqk/Debug/cmTC_3fb1f.lib" /MACHINE:X64  /machine:x64 cmTC_3fb1f.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_3fb1f.vcxproj -> D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l8ylqk\\Debug\\cmTC_3fb1f.exe
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-43s5rs\\Debug\\cmTC_83544.exe" /INCREMENTAL /ILK:"cmTC_83544.dir\\Debug\\cmTC_83544.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-43s5rs/Debug/cmTC_83544.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-43s5rs/Debug/cmTC_83544.lib" /MACHINE:X64  /machine:x64 cmTC_83544.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_83544.vcxproj -> D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-43s5rs\\Debug\\cmTC_83544.exe
         FinalizeBuildStatus:
-          Файл "cmTC_3fb1f.dir\\Debug\\cmTC_3fb1f.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_3fb1f.dir\\Debug\\cmTC_3fb1f.tlog\\cmTC_3fb1f.lastbuildstate".
-        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l8ylqk\\cmTC_3fb1f.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_83544.dir\\Debug\\cmTC_83544.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_83544.dir\\Debug\\cmTC_83544.tlog\\cmTC_83544.lastbuildstate".
+        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-43s5rs\\cmTC_83544.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:00.83
+        Прошло времени 00:00:00.91
         
       exitCode: 0
   -
@@ -4171,8 +4171,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-kbqxzj"
-      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-kbqxzj"
+      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-gebapr"
+      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-gebapr"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4186,39 +4186,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-kbqxzj'
+        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-gebapr'
         
-        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_ac4c0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_b1465.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine версии 16.11.2+f32259642 для .NET Framework
         (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
         
-        Сборка начата 07.08.2025 13:10:50.
-        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kbqxzj\\cmTC_ac4c0.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Сборка начата 07.08.2025 15:02:52.
+        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gebapr\\cmTC_b1465.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_ac4c0.dir\\Debug\\".
-          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kbqxzj\\Debug\\".
-          Создание каталога "cmTC_ac4c0.dir\\Debug\\cmTC_ac4c0.tlog\\".
+          Создание каталога "cmTC_b1465.dir\\Debug\\".
+          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gebapr\\Debug\\".
+          Создание каталога "cmTC_b1465.dir\\Debug\\cmTC_b1465.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_ac4c0.dir\\Debug\\cmTC_ac4c0.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_b1465.dir\\Debug\\cmTC_b1465.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_ac4c0.dir\\Debug\\\\" /Fd"cmTC_ac4c0.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_b1465.dir\\Debug\\\\" /Fd"cmTC_b1465.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.29.30159 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
           CMakeCXXCompilerABI.cpp
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_ac4c0.dir\\Debug\\\\" /Fd"cmTC_ac4c0.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_b1465.dir\\Debug\\\\" /Fd"cmTC_b1465.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kbqxzj\\Debug\\cmTC_ac4c0.exe" /INCREMENTAL /ILK:"cmTC_ac4c0.dir\\Debug\\cmTC_ac4c0.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-kbqxzj/Debug/cmTC_ac4c0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-kbqxzj/Debug/cmTC_ac4c0.lib" /MACHINE:X64  /machine:x64 cmTC_ac4c0.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_ac4c0.vcxproj -> D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kbqxzj\\Debug\\cmTC_ac4c0.exe
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gebapr\\Debug\\cmTC_b1465.exe" /INCREMENTAL /ILK:"cmTC_b1465.dir\\Debug\\cmTC_b1465.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-gebapr/Debug/cmTC_b1465.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-gebapr/Debug/cmTC_b1465.lib" /MACHINE:X64  /machine:x64 cmTC_b1465.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_b1465.vcxproj -> D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gebapr\\Debug\\cmTC_b1465.exe
         FinalizeBuildStatus:
-          Файл "cmTC_ac4c0.dir\\Debug\\cmTC_ac4c0.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_ac4c0.dir\\Debug\\cmTC_ac4c0.tlog\\cmTC_ac4c0.lastbuildstate".
-        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kbqxzj\\cmTC_ac4c0.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_b1465.dir\\Debug\\cmTC_b1465.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_b1465.dir\\Debug\\cmTC_b1465.tlog\\cmTC_b1465.lastbuildstate".
+        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gebapr\\cmTC_b1465.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:00.78
+        Прошло времени 00:00:00.90
         
       exitCode: 0
   -
@@ -4264,8 +4264,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-y8erqf"
-      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-y8erqf"
+      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zb2ybh"
+      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zb2ybh"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4278,39 +4278,39 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-y8erqf'
+        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-zb2ybh'
         
-        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_6f68c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_1a764.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine версии 16.11.2+f32259642 для .NET Framework
         (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
         
-        Сборка начата 07.08.2025 13:10:51.
-        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\cmTC_6f68c.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Сборка начата 07.08.2025 15:02:54.
+        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\cmTC_1a764.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_6f68c.dir\\Debug\\".
-          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\Debug\\".
-          Создание каталога "cmTC_6f68c.dir\\Debug\\cmTC_6f68c.tlog\\".
+          Создание каталога "cmTC_1a764.dir\\Debug\\".
+          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\Debug\\".
+          Создание каталога "cmTC_1a764.dir\\Debug\\cmTC_1a764.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_6f68c.dir\\Debug\\cmTC_6f68c.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_1a764.dir\\Debug\\cmTC_1a764.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_6f68c.dir\\Debug\\\\" /Fd"cmTC_6f68c.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\src.c"
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_1a764.dir\\Debug\\\\" /Fd"cmTC_1a764.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\src.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.29.30159 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
           src.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_6f68c.dir\\Debug\\\\" /Fd"cmTC_6f68c.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\src.c"
-        D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\src.c(1,10): fatal error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\cmTC_6f68c.vcxproj]
-        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\cmTC_6f68c.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_1a764.dir\\Debug\\\\" /Fd"cmTC_1a764.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\src.c"
+        D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\src.c(1,10): fatal error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\cmTC_1a764.vcxproj]
+        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\cmTC_1a764.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\cmTC_6f68c.vcxproj" (целевой объект по умолчанию) (1) ->
+        "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\cmTC_1a764.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект ClCompile) -> 
-          D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\src.c(1,10): fatal error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y8erqf\\cmTC_6f68c.vcxproj]
+          D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\src.c(1,10): fatal error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb2ybh\\cmTC_1a764.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:00.43
+        Прошло времени 00:00:00.49
         
       exitCode: 1
   -
@@ -4327,8 +4327,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3sl63f"
-      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3sl63f"
+      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ypmaho"
+      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ypmaho"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4341,36 +4341,36 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3sl63f'
+        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ypmaho'
         
-        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_f665e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_47849.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine версии 16.11.2+f32259642 для .NET Framework
         (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
         
-        Сборка начата 07.08.2025 13:10:52.
-        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\cmTC_f665e.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Сборка начата 07.08.2025 15:02:54.
+        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\cmTC_47849.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_f665e.dir\\Debug\\".
-          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\Debug\\".
-          Создание каталога "cmTC_f665e.dir\\Debug\\cmTC_f665e.tlog\\".
+          Создание каталога "cmTC_47849.dir\\Debug\\".
+          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\Debug\\".
+          Создание каталога "cmTC_47849.dir\\Debug\\cmTC_47849.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_f665e.dir\\Debug\\cmTC_f665e.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_47849.dir\\Debug\\cmTC_47849.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_f665e.dir\\Debug\\\\" /Fd"cmTC_f665e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\CheckFunctionExists.c"
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_47849.dir\\Debug\\\\" /Fd"cmTC_47849.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\CheckFunctionExists.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.29.30159 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
           CheckFunctionExists.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_f665e.dir\\Debug\\\\" /Fd"cmTC_f665e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_47849.dir\\Debug\\\\" /Fd"cmTC_47849.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\CheckFunctionExists.c"
         Link:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\Debug\\cmTC_f665e.exe" /INCREMENTAL /ILK:"cmTC_f665e.dir\\Debug\\cmTC_f665e.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3sl63f/Debug/cmTC_f665e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3sl63f/Debug/cmTC_f665e.lib" /MACHINE:X64  /machine:x64 cmTC_f665e.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\cmTC_f665e.vcxproj]
-        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\cmTC_f665e.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\Debug\\cmTC_47849.exe" /INCREMENTAL /ILK:"cmTC_47849.dir\\Debug\\cmTC_47849.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ypmaho/Debug/cmTC_47849.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ypmaho/Debug/cmTC_47849.lib" /MACHINE:X64  /machine:x64 cmTC_47849.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\cmTC_47849.vcxproj]
+        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\cmTC_47849.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\cmTC_f665e.vcxproj" (целевой объект по умолчанию) (1) ->
+        "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\cmTC_47849.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект Link) -> 
-          LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3sl63f\\cmTC_f665e.vcxproj]
+          LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ypmaho\\cmTC_47849.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
@@ -4392,8 +4392,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-0w833s"
-      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-0w833s"
+      source: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-j5ugj5"
+      binary: "D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-j5ugj5"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4406,41 +4406,41 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-0w833s'
+        Change Dir: 'D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-j5ugj5'
         
-        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_a5620.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "D:/Microsoft Visual Studio/MSBuild/Current/Bin/MSBuild.exe" cmTC_b6d51.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine версии 16.11.2+f32259642 для .NET Framework
         (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
         
-        Сборка начата 07.08.2025 13:10:52.
-        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\cmTC_a5620.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Сборка начата 07.08.2025 15:02:55.
+        Проект "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\cmTC_b6d51.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_a5620.dir\\Debug\\".
-          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\Debug\\".
-          Создание каталога "cmTC_a5620.dir\\Debug\\cmTC_a5620.tlog\\".
+          Создание каталога "cmTC_b6d51.dir\\Debug\\".
+          Создание каталога "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\Debug\\".
+          Создание каталога "cmTC_b6d51.dir\\Debug\\cmTC_b6d51.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_a5620.dir\\Debug\\cmTC_a5620.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_b6d51.dir\\Debug\\cmTC_b6d51.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_a5620.dir\\Debug\\\\" /Fd"cmTC_a5620.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\CheckFunctionExists.c"
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_b6d51.dir\\Debug\\\\" /Fd"cmTC_b6d51.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\CheckFunctionExists.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.29.30159 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
           CheckFunctionExists.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_a5620.dir\\Debug\\\\" /Fd"cmTC_a5620.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_b6d51.dir\\Debug\\\\" /Fd"cmTC_b6d51.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\CheckFunctionExists.c"
         Link:
-          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\Debug\\cmTC_a5620.exe" /INCREMENTAL /ILK:"cmTC_a5620.dir\\Debug\\cmTC_a5620.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-0w833s/Debug/cmTC_a5620.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-0w833s/Debug/cmTC_a5620.lib" /MACHINE:X64  /machine:x64 cmTC_a5620.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\cmTC_a5620.vcxproj]
-        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\cmTC_a5620.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+          D:\\Microsoft Visual Studio\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\Debug\\cmTC_b6d51.exe" /INCREMENTAL /ILK:"cmTC_b6d51.dir\\Debug\\cmTC_b6d51.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-j5ugj5/Debug/cmTC_b6d51.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/TruckLoadingSimulator/build/CMakeFiles/CMakeScratch/TryCompile-j5ugj5/Debug/cmTC_b6d51.lib" /MACHINE:X64  /machine:x64 cmTC_b6d51.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\cmTC_b6d51.vcxproj]
+        Сборка проекта "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\cmTC_b6d51.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\cmTC_a5620.vcxproj" (целевой объект по умолчанию) (1) ->
+        "D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\cmTC_b6d51.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект Link) -> 
-          LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0w833s\\cmTC_a5620.vcxproj]
+          LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [D:\\TruckLoadingSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j5ugj5\\cmTC_b6d51.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:00.59
+        Прошло времени 00:00:00.60
         
       exitCode: 1
   -
@@ -4496,7 +4496,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -4536,6 +4535,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TruckLoadingSimulator"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -4596,7 +4596,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -4636,6 +4635,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TruckLoadingSimulator"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -4696,7 +4696,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -4736,6 +4735,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TruckLoadingSimulator"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -4796,7 +4796,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -4836,6 +4835,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TruckLoadingSimulator"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -4871,7 +4871,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -4911,6 +4910,7 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/sbin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/"
@@ -4931,7 +4931,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -4971,6 +4970,7 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/sbin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/"
@@ -4991,7 +4991,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -5031,6 +5030,7 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -5068,9 +5068,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/pwsh.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/pwsh.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/pwsh"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/pwsh"
@@ -5188,6 +5185,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/pwsh"
@@ -5248,9 +5248,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/pwsh.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/pwsh.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/pwsh"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/pwsh"
@@ -5368,6 +5365,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/pwsh"
@@ -5428,9 +5428,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/pwsh"
-      - "C:/Program Files/Google/Chrome/Application/pwsh.com"
-      - "C:/Program Files/Google/Chrome/Application/pwsh.exe"
-      - "C:/Program Files/Google/Chrome/Application/pwsh"
       - "C:/ProgramData/Oracle/Java/javapath/pwsh.com"
       - "C:/ProgramData/Oracle/Java/javapath/pwsh.exe"
       - "C:/ProgramData/Oracle/Java/javapath/pwsh"
@@ -5548,6 +5545,9 @@ events:
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh.com"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh.exe"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/pwsh"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh.com"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh.exe"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/pwsh"
       - "C:/Program Files/bin/pwsh.com"
       - "C:/Program Files/bin/pwsh.exe"
       - "C:/Program Files/bin/pwsh"
@@ -5593,7 +5593,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -5633,6 +5632,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TruckLoadingSimulator"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -5668,7 +5668,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -5708,6 +5707,7 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/sbin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/"
@@ -5728,7 +5728,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -5768,6 +5767,7 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/CLION/CLion 2024.3.4/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/sbin/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/"
@@ -5788,7 +5788,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/"
-      - "C:/Program Files/Google/Chrome/Application/"
       - "C:/ProgramData/Oracle/Java/javapath/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/PROGRA~2/Borland/CBUILD~1/Projects/Bpl/"
@@ -5828,6 +5827,7 @@ events:
       - "D:/CLION/CLion 2024.3.4/bin/"
       - "C:/Program Files/JetBrains/IntelliJ IDEA 2025.1.3/bin/"
       - "C:/Program Files/JetBrains/WebStorm 2025.1.3/bin/"
+      - "C:/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -5865,9 +5865,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/powershell.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/powershell.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/Google/Chrome/Application/powershell"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/ProgramData/Oracle/Java/javapath/powershell"
@@ -5985,6 +5982,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/JetBrains/WebStorm 2025.1.3/bin/powershell"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/powershell.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/powershell.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/powershell"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/Program Files/bin/powershell"
@@ -6045,9 +6045,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/powershell.com"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/powershell.exe"
-      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/Google/Chrome/Application/powershell"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/ProgramData/Oracle/Java/javapath/powershell"
@@ -6165,6 +6162,9 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/JetBrains/WebStorm 2025.1.3/bin/powershell"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/powershell.com"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/powershell.exe"
+      - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Users/Pasha/AppData/Local/Programs/cursor/resources/app/bin/powershell"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug/Program Files/bin/powershell"
@@ -6225,9 +6225,6 @@ events:
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell.com"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell.exe"
       - "C:/Users/Pasha/vcpkg/installed/x64-windows/tools/draco/powershell"
-      - "C:/Program Files/Google/Chrome/Application/powershell.com"
-      - "C:/Program Files/Google/Chrome/Application/powershell.exe"
-      - "C:/Program Files/Google/Chrome/Application/powershell"
       - "C:/ProgramData/Oracle/Java/javapath/powershell.com"
       - "C:/ProgramData/Oracle/Java/javapath/powershell.exe"
       - "C:/ProgramData/Oracle/Java/javapath/powershell"
@@ -6286,7 +6283,6 @@ events:
         - "C:/Users/Pasha/vcpkg/installed/x64-windows"
         - "C:/Users/Pasha/vcpkg/installed/x64-windows/debug"
       ENV{PATH}:
-        - "C:\\Program Files\\Google\\Chrome\\Application"
         - "C:\\ProgramData\\Oracle\\Java\\javapath"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl"
@@ -6326,6 +6322,7 @@ events:
         - "D:\\CLION\\CLion 2024.3.4\\bin"
         - "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.3\\bin"
         - "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\bin"
+        - "C:\\Users\\Pasha\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TruckLoadingSimulator"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"

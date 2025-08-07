@@ -22,6 +22,15 @@ private:
     std::unique_ptr<Mesh> ground;
     std::unique_ptr<BoxManager> boxManager;
 
+    bool modelPositionsNeedUpdate = false;
+    struct LoadZone {
+        int zoneIndex;
+        float weight;
+        glm::vec3 position;
+    };
+    std::vector<LoadZone> loadZones;
+    void updateLoadZones();
+
     struct TruckDimensions {
         float width = 16.5f;   // 1650 см в масштабе
         float height = 2.6f;   // 260 см в масштабе

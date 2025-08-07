@@ -15,7 +15,7 @@ Renderer::Renderer() {
     modelShader->setVec3("lightPos", glm::vec3(-1.0f, 1.0f, -1.0f));
     modelShader->setVec3("lightColor", glm::vec3(1.5f, 1.5f, 1.5f)); // intensity 1.5
     modelShader->setVec3("ambientStrength", glm::vec3(0.4f, 0.4f, 0.4f));
-    
+
     // Для прозрачности (как в BabylonJS)
     modelShader->setFloat("alpha", 0.3f);
     modelShader->setBool("useAlpha", true);
@@ -35,18 +35,19 @@ Renderer::~Renderer() {
     cleanupUI();
 }
 
-void Renderer::setScene(Scene* scene) {
+void Renderer::setScene(Scene *scene) {
     currentScene = scene;
 }
 
-void Renderer::initializeUI(GLFWwindow* window) {
+void Renderer::initializeUI(GLFWwindow *window) {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO();
+    ImGuiIO &io = ImGui::GetIO();
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 
     // Try to load Russian font
-    ImFont* font = io.Fonts->AddFontFromFileTTF("assets/fonts/Roboto-Regular.ttf", 18.0f, nullptr, io.Fonts->GetGlyphRangesCyrillic());
+    ImFont *font = io.Fonts->AddFontFromFileTTF("assets/fonts/Roboto-Regular.ttf", 18.0f, nullptr,
+                                                io.Fonts->GetGlyphRangesCyrillic());
     if (font == nullptr) {
         io.Fonts->AddFontDefault();
         std::cout << "Warning: Could not load custom font, using default" << std::endl;
@@ -58,11 +59,11 @@ void Renderer::initializeUI(GLFWwindow* window) {
 }
 
 void Renderer::clear() {
-    glClearColor(0.35f, 0.35f, 0.35f, 1.0f);
+    glClearColor(0.15f, 0.15f, 0.15f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Renderer::render(const Scene& scene, const Camera& camera) {
+void Renderer::render(const Scene &scene, const Camera &camera) {
     modelShader->use();
 
     // Set up matrices
@@ -82,7 +83,7 @@ void Renderer::render(const Scene& scene, const Camera& camera) {
     scene.render(*modelShader);
 }
 
-void Renderer::renderUI(const Scene& scene, GLFWwindow* window) {
+void Renderer::renderUI(const Scene &scene, GLFWwindow *window) {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
@@ -90,9 +91,9 @@ void Renderer::renderUI(const Scene& scene, GLFWwindow* window) {
     renderMainMenuBar(window);
     renderTruckInfoPanel(scene);
     renderPerformancePanel();
-    
+
     // Рендерим панель коробок
-    auto* boxManager = const_cast<Scene&>(scene).getBoxManager();
+    auto *boxManager = const_cast<Scene &>(scene).getBoxManager();
     if (boxManager) {
         boxManager->renderBoxPanel();
     }
@@ -101,7 +102,7 @@ void Renderer::renderUI(const Scene& scene, GLFWwindow* window) {
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void Renderer::renderMainMenuBar(GLFWwindow* window) {
+void Renderer::renderMainMenuBar(GLFWwindow *window) {
     if (ImGui::BeginMainMenuBar()) {
         if (ImGui::BeginMenu("Файл")) {
             if (ImGui::MenuItem("Новый проект", "Ctrl+N")) {
@@ -139,6 +140,17 @@ void Renderer::renderMainMenuBar(GLFWwindow* window) {
                 updateTruckSize();
             }
 
+            ImGui::EndMenu();
+        }
+
+        if (ImGui::BeginMenu("Вид")) {
+            auto* boxManager = const_cast<Scene*>(currentScene)->getBoxManager();
+            if (boxManager) {
+                bool panelVisible = boxManager->isBoxPanelVisible();
+                if (ImGui::MenuItem("Показать/скрыть панель коробок", "Tab", &panelVisible)) {
+                    boxManager->toggleBoxPanel();
+                }
+            }
             ImGui::EndMenu();
         }
 
@@ -186,22 +198,106 @@ void Renderer::renderMainMenuBar(GLFWwindow* window) {
     }
 }
 
-void Renderer::renderTruckInfoPanel(const Scene& scene) {
-    ImGui::Begin("Информация о грузовике", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
+void Renderer::renderTruckInfoPanel(const Scene &scene) {
+    (void)scene; // Suppress unused parameter warning
+    ImGuiIO &io = ImGui::GetIO();
 
-    glm::vec3 currentSize = truckSettings.getCurrentSize();
-    ImGui::Text("Текущий тип: %s", truckSettings.useCustom ? "Пользовательский" :
-                truckPresets[truckSettings.currentPreset].name.c_str());
-    ImGui::Text("Размеры: %.0f x %.0f x %.0f см", currentSize.x, currentSize.y, currentSize.z);
-    ImGui::Text("Объем: %.2f м³", (currentSize.x * currentSize.y * currentSize.z) / 1000000.0f);
-    ImGui::Text("Тент: %s", truckSettings.tentOpen ? "Открыт" : "Закрыт");
+    // Информация о фуре справа сверху (полупрозрачная)
+    ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x - 350, 10), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(340, 300), ImGuiCond_Always);
 
+    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.85f);
+    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.2f, 0.2f, 0.2f, 0.9f));
+
+    ImGui::Begin("##TruckInfo", nullptr,
+                 ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize |
+                 ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBringToFrontOnFocus);
+
+    ImGui::Text("Информация о грузовике");
+    ImGui::Separator();
+
+    const char *presetNames[] = {
+        "Малый (590x239x235)",
+        "Компактный (1203x239x235)",
+        "Стандартный (1340x239x235)",
+        "Средний (1360x260x245)",
+        "Увеличенный (1360x300x245)",
+        "Большой (1650x260x245)"
+    };
+
+    if (ImGui::Combo("Тип грузовика", &truckSettings.currentPreset, presetNames, 6)) {
+        updateTruckSize();
+    }
+
+    ImGui::Checkbox("Свои размеры", &truckSettings.useCustom);
+
+    if (truckSettings.useCustom) {
+        ImGui::PushItemWidth(80);
+        ImGui::InputInt("Ширина", &truckSettings.customWidth, 10, 100);
+        ImGui::SameLine();
+        ImGui::InputInt("Высота", &truckSettings.customHeight, 10, 100);
+        ImGui::SameLine();
+        ImGui::InputInt("Глубина", &truckSettings.customDepth, 10, 100);
+        ImGui::PopItemWidth();
+
+        if (ImGui::Button("Применить размеры", ImVec2(-1, 25))) {
+            updateTruckSize();
+        }
+    }
+
+    ImGui::Separator();
+
+    // Управление тентом
+    ImGui::Text("Управление тентом:");
+    bool tentOpen = truckSettings.tentOpen;
+    if (ImGui::Checkbox("Тент открыт", &tentOpen)) {
+        truckSettings.tentOpen = tentOpen;
+        if (currentScene) {
+            const_cast<Scene *>(currentScene)->setTentOpen(tentOpen);
+        }
+    }
+
+    // Кнопки видов
+    ImGui::Text("Виды камеры:");
+    if (ImGui::Button("Сверху", ImVec2(80, 25))) {
+        // Логика для вида сверху
+    }
+    ImGui::SameLine();
+    if (ImGui::Button("Слева", ImVec2(80, 25))) {
+        // Логика для вида слева
+    }
+    ImGui::SameLine();
+    if (ImGui::Button("Справа", ImVec2(80, 25))) {
+        // Логика для вида справа
+    }
+
+    if (ImGui::Button("Сброс камеры", ImVec2(-1, 25))) {
+        // Логика сброса камеры
+    }
+
+    ImGui::PopStyleColor();
+    ImGui::PopStyleVar();
     ImGui::End();
 }
 
 void Renderer::renderPerformancePanel() {
-    ImGui::Begin("Performance");
-    ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+    ImGuiIO &io = ImGui::GetIO();
+
+    // Простой FPS счетчик внизу справа
+    ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x - 100, io.DisplaySize.y - 40), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(90, 30), ImGuiCond_Always);
+
+    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.7f);
+    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.0f, 0.0f, 0.0f, 0.5f));
+
+    ImGui::Begin("##FPS", nullptr,
+                 ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize |
+                 ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBringToFrontOnFocus);
+
+    ImGui::Text("%.0f FPS", io.Framerate);
+
+    ImGui::PopStyleColor();
+    ImGui::PopStyleVar();
     ImGui::End();
 }
 
@@ -210,16 +306,17 @@ glm::vec3 Renderer::TruckSettings::getCurrentSize() const {
         return glm::vec3(customWidth, customHeight, customDepth);
     } else {
         // Возвращаем размеры текущего пресета вместо значений по умолчанию
-        if (currentPreset >= 0 && currentPreset < 6) {  // Проверяем границы
+        if (currentPreset >= 0 && currentPreset < 6) {
+            // Проверяем границы
             const std::array<int, 3> presetSizes[6] = {
-                {590, 239, 235},   // Малый грузовик
-                {1203, 239, 235},  // Компактный грузовик
-                {1340, 239, 235},  // Стандартный грузовик
-                {1360, 260, 245},  // Средний грузовик
-                {1360, 300, 245},  // Увеличенный грузовик
-                {1650, 260, 245}   // Большой грузовик
+                {590, 239, 235}, // Малый грузовик
+                {1203, 239, 235}, // Компактный грузовик
+                {1340, 239, 235}, // Стандартный грузовик
+                {1360, 260, 245}, // Средний грузовик
+                {1360, 300, 245}, // Увеличенный грузовик
+                {1650, 260, 245} // Большой грузовик
             };
-            const auto& preset = presetSizes[currentPreset];
+            const auto &preset = presetSizes[currentPreset];
             return glm::vec3(preset[0], preset[1], preset[2]);
         }
         return glm::vec3(1650, 260, 245); // Fallback
@@ -227,13 +324,9 @@ glm::vec3 Renderer::TruckSettings::getCurrentSize() const {
 }
 
 void Renderer::updateTruckSize() {
-    glm::vec3 size = truckSettings.getCurrentSize();
-    std::cout << "Truck size updated: " << size.x << "x" << size.y << "x" << size.z << std::endl;
     if (currentScene) {
+        glm::vec3 size = truckSettings.getCurrentSize();
         currentScene->updateTruckSize(size.x, size.y, size.z);
-        std::cout << "Scene truck size updated successfully" << std::endl;
-    } else {
-        std::cerr << "Warning: Scene not set in renderer, cannot update truck size" << std::endl;
     }
 }
 

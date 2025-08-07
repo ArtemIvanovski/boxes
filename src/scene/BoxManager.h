@@ -16,6 +16,8 @@ struct BoxData {
     glm::vec3 color;
     bool isSelected = false;
     bool isOnScene = false;
+    bool hasMarkings = true;
+    std::string markingText;
     glm::vec3 position = glm::vec3(0.0f);
     glm::vec3 rotation = glm::vec3(0.0f);
     
